@@ -1,0 +1,18 @@
+.main {
+  border: solid 1px black;
+}
+
+.main-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.main-left-row {
+  flex: 40%;
+  border: solid 1px black;
+}
+
+.main-right-row {
+  flex: 60%;
+  border: solid 1px black;
+}

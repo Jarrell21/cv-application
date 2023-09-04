@@ -1,0 +1,9 @@
+.attainment-row {
+  display: flex;
+}
+.attainment-left-row {
+  flex: 30%;
+}
+.attainment-right-row {
+  flex: 70%;
+}

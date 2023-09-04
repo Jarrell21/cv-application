@@ -1,0 +1,18 @@
+.work-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-row {
+  display: flex;
+}
+
+.work-left-row {
+  flex: 30%;
+}
+
+.work-right-row {
+  flex: 70%;
+}
