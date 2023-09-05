@@ -34,35 +34,44 @@ function Side({ info, setInfo }) {
   }
 
   return (
-    <div className='side'>
-      {inputList.map((input) => {
-        if(input.isArray){
-          return (
-            <div key={input.label} className='input'>
-              <div className={input.name + ' input'}>
-                <label htmlFor={input.name}>{input.label}</label>
-                {children.map((child) => {
-                  if(child.target == input.name){
-                    return child.data.map((input) => input)
-                  }
-                })}
+    <aside className='side'>
+      <div>
+        <h3>Personal Information</h3>
+        {inputList.map((input) => {
+          if(input.isArray){
+            return (
+              <div key={input.label} className='input'>
+                <div className={input.name + ' input'}>
+                  <label htmlFor={input.name}>{input.label}</label>
+                  {children.map((child) => {
+                    if(child.target == input.name){
+                      return child.data.map((input) => input)
+                    }
+                  })}
+                </div>
+                <button className={input.name + '-btn'}
+                  onClick={() => handleAddInput(input)}
+                >
+                  Add {input.name}
+                </button>
               </div>
-              <button className={input.name + '-btn'}
-                onClick={() => handleAddInput(input)}
-              >
-                Add {input.name}
-              </button>
-            </div>
-          )
-        }
-          return (
-            <div key={input.label} className='input'>
-              <label htmlFor={input.name}>{input.label}</label>
-              <Input input={input} info={info} setInfo={setInfo}/>
-            </div>
-          )
-      })}
-    </div>
+            )
+          }
+            return (
+              <div key={input.label} className='input'>
+                <label htmlFor={input.name}>{input.label}</label>
+                <Input input={input} info={info} setInfo={setInfo}/>
+              </div>
+            )
+        })}
+      </div>
+      <div>
+        <h3>Work Experience</h3>
+      </div>
+      <div>
+        <h3>Education</h3>
+      </div>
+    </aside>
   )
 }
 
