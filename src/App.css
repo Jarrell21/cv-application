@@ -11,6 +11,22 @@
 
 .main {
   flex: 70%;
+  border: solid 1px black;
+}
+
+.main-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.main-left-col {
+  flex: 40%;
+  border: solid 1px black;
+}
+
+.main-right-col {
+  flex: 60%;
+  border: solid 1px black;
 }
 
 .side {

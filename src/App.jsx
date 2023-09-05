@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Main from './components/main/Main';
-import Side from './components/side/Side';
+import Sidebar from './components/Sidebar';
+import GeneralInfo from './components/GeneralInfo';
+import EducationalExp from './components/EducationalExp';
+import PracticalExp from './components/PracticalExp';
 import './App.css'
 
 function App() {
@@ -20,8 +22,18 @@ function App() {
 
   return (
     <div className='row'>
-      <Main info={info} setInfo={setInfo}/>
-      <Side info={info} setInfo={setInfo} />
+      <div className='main'>
+        <div className="main-row">
+          <div className='main-left-col'>
+            <GeneralInfo info={info} setInfo={setInfo}/>
+          </div>
+          <div className="main-right-col">
+            <PracticalExp />
+            <EducationalExp />
+          </div>
+        </div>
+      </div>
+      <Sidebar info={info} setInfo={setInfo} />
     </div>
   )
 }

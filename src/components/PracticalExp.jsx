@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../../styles/PracticalExp.css'
+import '../styles/Resume.css'
 
 function PracticalExp(props) {
   return (

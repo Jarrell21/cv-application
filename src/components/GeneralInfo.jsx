@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import placeholderPerson from '../assets/placeholder-person.jpg'
+import '../styles/Resume.css'
 
 function GeneralInfo({ info, setInfo }) {
 
   return (
     <div>
       <div className="img-section">
-        <p>Image here</p>
+        <img src={placeholderPerson} alt="" />
         <p className='applicant-name'>{info.fullName}</p>
       </div>
       <div className="objective-section">
