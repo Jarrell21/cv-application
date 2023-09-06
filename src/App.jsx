@@ -1,8 +1,6 @@
 import { useState } from "react";
+import Resume from './components/Resume';
 import Sidebar from './components/Sidebar';
-import GeneralInfo from './components/GeneralInfo';
-import EducationalExp from './components/EducationalExp';
-import PracticalExp from './components/PracticalExp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import './App.css'
@@ -19,24 +17,27 @@ function App() {
     mobile: '12345678910',
     email: 'abc@email.com',
     skills: ['Skill1', 'Skill2'],
-    languages: ['Language1']
+    languages: ['Language1'],
+    companyName: 'FILAM Software Technology',
+    duration: '2022 Feb to 2022 May',
+    position: 'Web Developer Trainee',
+    specialization: 'Software Development',
+    industry: 'Information Technology (Software)',
+    natureOfWork: [
+      'On-the-job training',
+      'Collaborates with a team in developing a web application'
+    ],
+    dateGraduated: '2022 Jun',
+    attainment: "Bachelor's/College Degree",
+    schoolName: 'Senior high school diploma',
+    course: 'BS in Computer Engineering',
   })
 
   return (
     <>
       <header>Resume creator</header>
       <div className="main">
-        <main className='resume'>
-          <div className="resume-row">
-            <div className='resume-left-col'>
-              <GeneralInfo info={info} setInfo={setInfo}/>
-            </div>
-            <div className="resume-right-col">
-              <PracticalExp />
-              <EducationalExp />
-            </div>
-          </div>
-        </main>
+        <Resume info={info} setInfo={setInfo} />
         <Sidebar info={info} setInfo={setInfo} />
       </div>
       <footer>

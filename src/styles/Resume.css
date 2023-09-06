@@ -24,10 +24,10 @@
   display: flex;
 }
 
-.work-left-row {
+.work-left-col {
   flex: 30%;
 }
 
-.work-right-row {
+.work-right-col {
   flex: 70%;
 }

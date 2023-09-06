@@ -2,18 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../styles/Resume.css'
 
-function EducationalExp(props) {
-    return (
-    <div className='education'>
-        <h3>EDUCATION</h3>
-        <Education />
-        <Education />
-        <Education />
-    </div>
-    )
-}
-
-function Education({dateGraduated, attainment, schoolName, course}){
+function Education({ dateGraduated, attainment, schoolName, course }){
     return (
         <div className='attainment'>
             <div className="attainment-row">
@@ -30,14 +19,6 @@ function Education({dateGraduated, attainment, schoolName, course}){
     )
 }
 
-Education.defaultProps = {
-    dateGraduated: '2022 Jun',
-    attainment: "Bachelor's/College Degree",
-    schoolName: 'Senior high school diploma',
-    course: 'BS in Computer Engineering',
-}
-
-EducationalExp.propTypes = {}
 Education.propTypes = {
     dateGraduated: PropTypes.any,
     attainment: PropTypes.any,
@@ -45,4 +26,4 @@ Education.propTypes = {
     course: PropTypes.any,
 }
 
-export default EducationalExp
+export default Education
