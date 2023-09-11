@@ -6,10 +6,10 @@ function Education({ dateGraduated, attainment, schoolName, course }){
     return (
         <div className='attainment'>
             <div className="attainment-row">
-                <div className="attainment-left-row">
+                <div className="attainment-left-col">
                     <p>{dateGraduated}</p>
                 </div>
-                <div className="attainment-right-row">
+                <div className="attainment-right-col">
                     <p>{attainment}</p>
                     <p>{schoolName}</p>
                     <p>{course}</p>

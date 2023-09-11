@@ -3,38 +3,37 @@ import PropTypes from 'prop-types'
 import placeholderPerson from '../assets/placeholder-person.jpg'
 import '../styles/Resume.css'
 
-function GeneralInfo({ info, setInfo }) {
-
+function GeneralInfo({ data }) {
   return (
     <div>
       <div className="img-section">
         <img src={placeholderPerson} alt="" />
-        <p className='applicant-name'>{info.fullName}</p>
+        <p className='applicant-name'>{data.generalInfo.fullName}</p>
       </div>
       <div className="objective-section">
         <h3>OBJECTIVE</h3>
-        <p>{info.objective}</p>
+        <p>{data.generalInfo.objective}</p>
       </div>
       <div className="personal-info-section">
         <h3>PERSONAL INFORMATION</h3>
-        <p>Birthdate: {info.birthDate}</p>
-        <p>Nationality: {info.nationality}</p>
-        <p>Address: {info.address}</p>
+        <p>Birthdate: {data.generalInfo.birthDate}</p>
+        <p>Nationality: {data.generalInfo.nationality}</p>
+        <p>Address: {data.generalInfo.address}</p>
       </div>
       <div className="contact-info-section">
         <h3>CONTACT INFORMATION</h3>
-        <p>Mobile: {info.mobile}</p>
-        <p>Email: {info.email}</p>
+        <p>Mobile: {data.generalInfo.mobile}</p>
+        <p>Email: {data.generalInfo.email}</p>
       </div>
       <div className="skills-section">
         <h3>SKILLS</h3>
-        {info.skills.map((skill) => {
+        {data.generalInfo.skills.map((skill) => {
           return <p key={skill}>{skill}</p>
         })}
       </div>
       <div className="languages-section">
         <h3>LANGUAGES</h3>
-        {info.languages.map((language) => {
+        {data.generalInfo.languages.map((language) => {
           return <p key={language}>{language}</p>
         })}
       </div>
@@ -43,8 +42,7 @@ function GeneralInfo({ info, setInfo }) {
 }
 
 GeneralInfo.propTypes = {
-  info: PropTypes.any,
-  setInfo: PropTypes.any,
+  data: PropTypes.any,
 }
 
 export default GeneralInfo;
