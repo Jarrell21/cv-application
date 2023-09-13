@@ -14,13 +14,13 @@ function Resume({ data }) {
             <div className="resume-right-col">
             <div className='work-experience'>
                 <h3>WORK EXPERIENCE</h3>
-                {data.workExperience.map((work) => {
+                {data.workExperience && data.workExperience.map((work) => {
                     return <Work key={work} companyName={work.companyName} duration={work.duration} position={work.position} specialization={work.specialization} industry={work.industry} natureOfWork={work.natureOfWork} />
                 })}
             </div>
             <div className='education'>
                 <h3>EDUCATION</h3>
-                {data.education.map((educ) => {
+                {data.education && data.education.map((educ) => {
                     return <Education key={educ} dateGraduated={educ.dateGraduated} attainment={educ.attainment} schoolName={educ.schoolName} course={educ.course} />
                 })}
             </div>

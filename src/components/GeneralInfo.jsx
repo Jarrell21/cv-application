@@ -27,13 +27,13 @@ function GeneralInfo({ data }) {
       </div>
       <div className="skills-section">
         <h3>SKILLS</h3>
-        {data.generalInfo.skills.map((skill) => {
+        {data.generalInfo.skills && data.generalInfo.skills.map((skill) => {
           return <p key={skill}>{skill}</p>
         })}
       </div>
       <div className="languages-section">
         <h3>LANGUAGES</h3>
-        {data.generalInfo.languages.map((language) => {
+        {data.generalInfo.languages && data.generalInfo.languages.map((language) => {
           return <p key={language}>{language}</p>
         })}
       </div>
