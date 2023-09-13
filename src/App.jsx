@@ -6,19 +6,17 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import './App.css'
 
 function App() {
-  const today = new Date();
-  const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
   const [data, setData] = useState({
     generalInfo: {
       fullName: 'Juan Dela Cruz',
-      birthDate: date,
+      birthDate: '2000-06-21',
       objective: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus deserunt est expedita explicabo iste placeat debitis dolorem? Commodi, natus?',
       nationality: 'Filipino',
       address: 'Mabalacat City',
       mobile: '12345678910',
       email: 'abc@email.com',
       skills: ['Skill1', 'Skill2'],
-      languages: ['Language1'],
+      languages: ['Language1', 'Language2'],
     },
     workExperience: [
       {
@@ -36,7 +34,7 @@ function App() {
     education: [
       {
         attainment: "Bachelor's/College Degree",
-        schoolName: 'Senior high school diploma',
+        schoolName: 'Holy Angel University',
         course: 'BS in Computer Engineering',
         dateGraduated: '2022 Jun',
       }

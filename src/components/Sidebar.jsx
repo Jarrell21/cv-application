@@ -2,86 +2,123 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 import '../styles/Sidebar.css'
 
-function Sidebar({ info, setInfo }) {
+function Sidebar({ data, setData }) {
   const personalInfoinputList = [
-    {label: 'Full name', type: 'text', name: 'fullName'},
-    {label: 'Birthdate', type: 'date', name: 'birthDate'},
-    {label: 'Address', type: 'text', name: 'address'},
-    {label: 'Mobile number', type: 'text', name: 'mobile'},
-    {label: 'Email', type: 'email', name: 'email'},
-    {label: 'Skills', type: 'text', name: 'skills', isArray: true},
-    {label: 'Languages', type: 'text', name: 'languages', isArray: true},
+    {groupName: 'generalInfo', label: 'Full name', type: 'text', name: 'fullName'},
+    {groupName: 'generalInfo', label: 'Birthdate', type: 'date', name: 'birthDate'},
+    {groupName: 'generalInfo', label: 'Address', type: 'text', name: 'address'},
+    {groupName: 'generalInfo', label: 'Mobile number', type: 'text', name: 'mobile'},
+    {groupName: 'generalInfo', label: 'Email', type: 'email', name: 'email'},
+    {groupName: 'generalInfo', label: 'Skills', type: 'text', name: 'skills', isArray: true},
+    {groupName: 'generalInfo', label: 'Languages', type: 'text', name: 'languages', isArray: true},
   ];
 
   const workInputList = [
-    {label: 'Company name', type: 'text', name: 'companyName'},
-    {label: 'Start date', type: 'date', name: 'startDate'},
-    {label: 'End date', type: 'date', name: 'endDate'},
-    {label: 'Position', type: 'text', name: 'position'},
-    {label: 'Specialization', type: 'text', name: 'specialization'},
-    {label: 'Industry', type: 'email', name: 'industry'},
-    {label: 'Nature of work', type: 'text', name: 'natureOfWork', isArray: true},
+    {groupName: 'workExperience', label: 'Company name', type: 'text', name: 'companyName'},
+    {groupName: 'workExperience', label: 'Start date', type: 'date', name: 'startDate'},
+    {groupName: 'workExperience', label: 'End date', type: 'date', name: 'endDate'},
+    {groupName: 'workExperience', label: 'Position', type: 'text', name: 'position'},
+    {groupName: 'workExperience', label: 'Specialization', type: 'text', name: 'specialization'},
+    {groupName: 'workExperience', label: 'Industry', type: 'email', name: 'industry'},
+    {groupName: 'workExperience', label: 'Nature of work', type: 'text', name: 'natureOfWork', isArray: true},
   ];
 
   const educationInputList = [
-    {label: 'School name', type: 'text', name: 'schoolName'},
-    {label: 'Attainment', type: 'text', name: 'attainment'},
-    {label: 'Course', type: 'text', name: 'course'},
-    {label: 'Date graduated', type: 'date', name: 'dateGraduated'},
+    {groupName: 'education', label: 'School name', type: 'text', name: 'schoolName'},
+    {groupName: 'education', label: 'Attainment', type: 'text', name: 'attainment'},
+    {groupName: 'education', label: 'Course', type: 'text', name: 'course'},
+    {groupName: 'education', label: 'Date graduated', type: 'date', name: 'dateGraduated'},
   ];
+
+  const [visible, setVisible] = useState(false);
+
+  const handleAddButton = (group) => {
+    setVisible((prev) => ({...prev, [group]: !prev[group]}));
+  }
 
   return (
     <aside className='side'>
       <div className='side-personal-info'>
         <h3>Personal Information</h3>
-        <InputGroup group={personalInfoinputList} info={info} setInfo={setInfo}/>
+        <InputGroup group={personalInfoinputList} data={data} setData={setData}/>
+        <button>Edit</button>
       </div>
       <div className='side-work-exp'>
         <h3>Work Experience</h3>
-        <button>Add work experience</button>
-        {/* <InputGroup group={workInputList} info={info} setInfo={setInfo}/> */}
+        {data.workExperience && data.workExperience.map((work) => {
+          return <div key={work} className='sidebar-item'>{work.companyName}</div>
+        })}
+        {visible['work'] ? (
+            <>
+              <InputGroup group={workInputList} data={data} setData={setData}/>
+              <button>Submit</button>
+              <button onClick={() => handleAddButton('work')}>Cancel</button>
+            </>
+          ) : <button onClick={() => handleAddButton('work')}>Add work experience</button>
+        }
+        
       </div>
       <div className='side-education'>
         <h3>Education</h3>
-        <button>Add education</button>
-        {/* <InputGroup group={educationInputList} info={info} setInfo={setInfo}/> */}
+        {data.education && data.education.map((education) => {
+          return <div key={education} className='sidebar-item'>{education.schoolName}</div>
+        })}
+        {visible['education'] ? (
+            <>
+              <InputGroup group={educationInputList} data={data} setData={setData}/>
+              <button>Submit</button>
+              <button onClick={() => handleAddButton('education')}>Cancel</button>
+            </>
+          ) : <button onClick={() => handleAddButton('education')}>Add education</button>
+        }
       </div>
     </aside>
   )
 }
 
-function Input({ input, info, setInfo }){
-  return (
-      <input title={input.name} type={input.type} name={input.name} />
-  )
-}
-
-function InputGroup({ group, info, setInfo }){
+function InputGroup({ group, data, setData }){
   return <div className='input-group'>
     {group.map((input) => {
-      return <div key={input.label} className='input'>
-        <label htmlFor={input.name}>{input.label}</label>
-        <Input input={input} info={info} setInfo={setInfo}/>
-      </div>
+      return (
+        <div key={input.label} className='input'>
+          <label htmlFor={input.name}>{input.label}</label>
+          {input.type == 'date' ?
+            <input
+              title={input.name} 
+              type={input.type} 
+              name={input.name} 
+              defaultValue={new Date(data.generalInfo.birthDate).toISOString().split('T')[0]} 
+            /> :
+            input.isArray ? 
+              <>
+                {data[input.groupName][input.name] && data[input.groupName][input.name].map((element) => {
+                  return <input key={element} title={input.name} type={input.type} name={input.name} defaultValue={element} />
+                })}
+                <button>Add</button>
+              </>
+              :
+            <input
+              title={input.name} 
+              type={input.type} 
+              name={input.name} 
+              defaultValue={data.generalInfo[input.name]} 
+            />
+          }
+        </div>
+      )
     })}
   </div>
 }
 
 Sidebar.propTypes = {
-  info: PropTypes.any,
-  setInfo: PropTypes.any,
-}
-
-Input.propTypes = { 
-  input: PropTypes.any,
-  info: PropTypes.any,
-  setInfo: PropTypes.any,
+  data: PropTypes.any,
+  setData: PropTypes.any,
 }
 
 InputGroup.propTypes = {
   group: PropTypes.any,
-  info: PropTypes.any,
-  setInfo: PropTypes.any,
+  data: PropTypes.any,
+  setData: PropTypes.any,
 }
 
 export default Sidebar
