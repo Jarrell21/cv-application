@@ -1,45 +1,47 @@
 import { useState } from "react";
-import Resume from './components/Resume';
-import Sidebar from './components/Sidebar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import './App.css'
+import Resume from "./components/Resume";
+import Sidebar from "./components/Sidebar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import "./App.css";
 
 function App() {
   const [data, setData] = useState({
     generalInfo: {
-      fullName: 'Juan Dela Cruz',
-      birthDate: '2000-06-21',
-      objective: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus deserunt est expedita explicabo iste placeat debitis dolorem? Commodi, natus?',
-      nationality: 'Filipino',
-      address: 'Mabalacat City',
-      mobile: '12345678910',
-      email: 'abc@email.com',
-      skills: ['Skill1', 'Skill2'],
-      languages: ['Language1', 'Language2'],
+      fullName: "Juan Dela Cruz",
+      birthDate: "2000-06-21",
+      objective:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus deserunt est expedita explicabo iste placeat debitis dolorem? Commodi, natus?",
+      nationality: "Filipino",
+      address: "Mabalacat City",
+      mobile: "12345678910",
+      email: "abc@email.com",
+      skills: ["Skill1", "Skill2"],
+      languages: ["Language1", "Language2"],
     },
     workExperience: [
       {
-        companyName: 'FILAM Software Technology',
-        duration: '2022 Feb to 2022 May',
-        position: 'Web Developer Trainee',
-        specialization: 'Software Development',
-        industry: 'Information Technology (Software)',
+        companyName: "FILAM Software Technology",
+        startDate: "2022-02-01",
+        endDate: "2022-05-01",
+        position: "Web Developer Trainee",
+        specialization: "Software Development",
+        industry: "Information Technology (Software)",
         natureOfWork: [
-          'On-the-job training',
-          'Collaborates with a team in developing a web application'
+          "On-the-job training",
+          "Collaborates with a team in developing a web application",
         ],
-      }
+      },
     ],
     education: [
       {
         attainment: "Bachelor's/College Degree",
-        schoolName: 'Holy Angel University',
-        course: 'BS in Computer Engineering',
-        dateGraduated: '2022 Jun',
-      }
-    ]
-  })
+        schoolName: "Holy Angel University",
+        course: "BS in Computer Engineering",
+        dateGraduated: "2022 Jun",
+      },
+    ],
+  });
 
   return (
     <>
@@ -51,11 +53,11 @@ function App() {
       <footer>
         Created by Jarrell21
         <a href="https://github.com/Jarrell21" target="_blank" rel="noreferrer">
-            <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} />
         </a>
-    </footer>
+      </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

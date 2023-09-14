@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import placeholderPerson from '../assets/placeholder-person.jpg'
-import '../styles/Resume.css'
+import React from "react";
+import PropTypes from "prop-types";
+import placeholderPerson from "../assets/placeholder-person.jpg";
+import "../styles/Resume.css";
 
 function GeneralInfo({ data }) {
   return (
     <div>
       <div className="img-section">
         <img src={placeholderPerson} alt="" />
-        <p className='applicant-name'>{data.generalInfo.fullName}</p>
+        <p className="applicant-name">{data.generalInfo.fullName}</p>
       </div>
       <div className="objective-section">
         <h3>OBJECTIVE</h3>
@@ -27,22 +27,24 @@ function GeneralInfo({ data }) {
       </div>
       <div className="skills-section">
         <h3>SKILLS</h3>
-        {data.generalInfo.skills && data.generalInfo.skills.map((skill) => {
-          return <p key={skill}>{skill}</p>
-        })}
+        {data.generalInfo.skills &&
+          data.generalInfo.skills.map((skill) => {
+            return <p key={skill}>{skill}</p>;
+          })}
       </div>
       <div className="languages-section">
         <h3>LANGUAGES</h3>
-        {data.generalInfo.languages && data.generalInfo.languages.map((language) => {
-          return <p key={language}>{language}</p>
-        })}
+        {data.generalInfo.languages &&
+          data.generalInfo.languages.map((language) => {
+            return <p key={language}>{language}</p>;
+          })}
       </div>
     </div>
-  )
+  );
 }
 
 GeneralInfo.propTypes = {
   data: PropTypes.any,
-}
+};
 
 export default GeneralInfo;
