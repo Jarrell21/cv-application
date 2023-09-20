@@ -25,26 +25,6 @@ header {
   gap: 0.5rem;
 }
 
-.resume {
-  flex: 70%;
-  border: solid 1px black;
-}
-
-.resume-row {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.resume-left-col {
-  flex: 40%;
-  border: solid 1px black;
-}
-
-.resume-right-col {
-  flex: 60%;
-  border: solid 1px black;
-}
-
 .side {
   flex: 30%;
 }

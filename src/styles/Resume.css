@@ -3,6 +3,26 @@
   border: 2px solid red;
 }
 
+.resume {
+  flex: 70%;
+  border: solid 1px black;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.resume-row {
+}
+
+.resume-left-col {
+  flex: 40%;
+  border: solid 1px black;
+}
+
+.resume-right-col {
+  flex: 60%;
+  border: solid 1px black;
+}
+
 .attainment-row {
   display: flex;
 }

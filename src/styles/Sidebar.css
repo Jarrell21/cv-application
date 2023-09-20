@@ -1,10 +1,14 @@
+textarea {
+  resize: none;
+}
+
 .side {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.input {
+.input-group {
   display: flex;
   flex-direction: column;
 }
