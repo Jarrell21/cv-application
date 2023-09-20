@@ -4,10 +4,11 @@ import Sidebar from "./components/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./App.css";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [data, setData] = useState({
-    generalInfo: {
+    personalInfo: {
       fullName: "Juan Dela Cruz",
       birthDate: "2000-06-21",
       objective:
@@ -16,8 +17,14 @@ function App() {
       address: "Mabalacat City",
       mobile: "12345678910",
       email: "abc@email.com",
-      skills: ["Skill1", "Skill2"],
-      languages: ["Language1", "Language2"],
+      skills: [
+        { id: uuidv4(), skillName: "Skill1" },
+        { id: uuidv4(), skillName: "Skill2" },
+      ],
+      languages: [
+        { id: uuidv4(), languageName: "Language1" },
+        { id: uuidv4(), languageName: "Language2" },
+      ],
     },
     workExperience: [
       {
@@ -38,7 +45,7 @@ function App() {
         attainment: "Bachelor's/College Degree",
         schoolName: "Holy Angel University",
         course: "BS in Computer Engineering",
-        dateGraduated: "2022 Jun",
+        dateGraduated: "2022-06-10",
       },
     ],
   });
