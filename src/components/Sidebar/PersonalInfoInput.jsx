@@ -1,57 +1,17 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
-import { v4 as uuidv4 } from "uuid";
 
 function PersonalInfoInput({ data, setData }) {
-  const [editFormMode, setEditFormMode] = useState(false);
+  const handleOnChange = (e) => {
+    const value = e.target.value;
 
-  const toggleEditFormMode = () => {
-    setEditFormMode((prevState) => !prevState);
-  };
-
-  const handleSubmitFormButton = () => {
-    const allInput = document.querySelectorAll(".input");
-
-    const newValues = [...allInput].reduce((obj, input) => {
-      return { ...obj, [input.name]: input.value };
-    }, {});
-
-    const newData = {
+    setData({
       ...data,
       personalInfo: {
         ...data.personalInfo,
-        fullName: newValues.fullName,
-        birthDate: newValues.birthDate,
-        nationality: newValues.nationality,
-        address: newValues.address,
-        mobile: newValues.mobile,
-        email: newValues.email,
-        objective: newValues.objective,
+        [e.target.name]: value,
       },
-    };
-
-    setData(newData);
-    toggleEditFormMode();
+    });
   };
-
-  const handleCancelFormButton = () => {
-    // console.log(data);
-    setData(data);
-    toggleEditFormMode();
-  };
-
-  // const handleAddSkill = () => {
-  //   const id = uuidv4();
-  //   const newData = {
-  //     ...data,
-  //     personalInfo: {
-  //       ...data.personalInfo,
-  //       skills: [...data.personalInfo.skills, { id: id, skillName: "" }],
-  //     },
-  //   };
-
-  //   setData(newData);
-  // };
 
   return (
     <div className="side-personal-info">
@@ -61,9 +21,9 @@ function PersonalInfoInput({ data, setData }) {
         <input
           className="input"
           name="fullName"
-          disabled={!editFormMode}
           type="text"
           defaultValue={data.personalInfo.fullName}
+          onChange={handleOnChange}
         />
       </div>
       <div className="input-group">
@@ -71,9 +31,9 @@ function PersonalInfoInput({ data, setData }) {
         <input
           className="input"
           name="birthDate"
-          disabled={!editFormMode}
           type="date"
           defaultValue={data.personalInfo.birthDate}
+          onChange={handleOnChange}
         />
       </div>
       <div className="input-group">
@@ -81,9 +41,9 @@ function PersonalInfoInput({ data, setData }) {
         <input
           className="input"
           name="nationality"
-          disabled={!editFormMode}
           type="text"
           defaultValue={data.personalInfo.nationality}
+          onChange={handleOnChange}
         />
       </div>
       <div className="input-group">
@@ -91,9 +51,9 @@ function PersonalInfoInput({ data, setData }) {
         <input
           className="input"
           name="address"
-          disabled={!editFormMode}
           type="text"
           defaultValue={data.personalInfo.address}
+          onChange={handleOnChange}
         />
       </div>
       <div className="input-group">
@@ -101,9 +61,9 @@ function PersonalInfoInput({ data, setData }) {
         <input
           className="input"
           name="mobile"
-          disabled={!editFormMode}
           type="text"
           defaultValue={data.personalInfo.mobile}
+          onChange={handleOnChange}
         />
       </div>
       <div className="input-group">
@@ -111,9 +71,9 @@ function PersonalInfoInput({ data, setData }) {
         <input
           className="input"
           name="email"
-          disabled={!editFormMode}
           type="text"
           defaultValue={data.personalInfo.email}
+          onChange={handleOnChange}
         />
       </div>
       <div className="input-group">
@@ -121,56 +81,12 @@ function PersonalInfoInput({ data, setData }) {
         <textarea
           className="input"
           name="objective"
-          disabled={!editFormMode}
           type="text"
           rows="4"
           defaultValue={data.personalInfo.objective}
+          onChange={handleOnChange}
         ></textarea>
       </div>
-      <div className="input-group">
-        <label htmlFor="skills">Skills</label>
-        <div className="skills-list">
-          {data.personalInfo.skills.map((skill) => (
-            <div key={skill.id} className="skill">
-              <input
-                className="input"
-                name={skill.skillName}
-                disabled={!editFormMode}
-                type="text"
-                defaultValue={skill.skillName}
-              />
-              <button disabled={!editFormMode}>Delete</button>
-            </div>
-          ))}
-        </div>
-        {/* <input type="text" /> */}
-        <button disabled={!editFormMode}>Add skill</button>
-      </div>
-      <div className="input-group">
-        <label htmlFor="languages">Languages</label>
-        {data.personalInfo.languages.map((language) => (
-          <div key={language.id}>
-            <input
-              className="input"
-              name={language.languageName}
-              disabled={!editFormMode}
-              type="text"
-              defaultValue={language.languageName}
-            />
-            <button disabled={!editFormMode}>Delete</button>
-          </div>
-        ))}
-        {/* <input type="text" /> */}
-        <button disabled={!editFormMode}>Add language</button>
-      </div>
-      {editFormMode ? (
-        <>
-          <button onClick={handleSubmitFormButton}>Submit</button>
-          <button onClick={handleCancelFormButton}>Cancel</button>
-        </>
-      ) : (
-        <button onClick={toggleEditFormMode}>Edit</button>
-      )}
     </div>
   );
 }

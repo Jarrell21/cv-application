@@ -1,21 +1,28 @@
-import React from "react";
 import PropTypes from "prop-types";
-import Input from "./Input";
 
 function InputGroup({ group, data, setData, action }) {
   return (
-    <div className="input-group">
+    <>
       {group.map((input) => {
         return (
-          <Input
-            key={input.name}
-            type={input.type}
-            label={input.label}
-            name={input.name}
-          />
+          <div className="input-group" key={input.name}>
+            <div>
+              <label htmlFor={input.name}>{input.label}</label>
+              <input type={input.type} />
+            </div>
+            {/* <div className="input-group">
+              <label htmlFor="fullName">Full name</label>
+              <input
+                className="input"
+                name="fullName"
+                type="text"
+                defaultValue={data.personalInfo.fullName}
+              />
+            </div> */}
+          </div>
         );
       })}
-    </div>
+    </>
   );
 }
 

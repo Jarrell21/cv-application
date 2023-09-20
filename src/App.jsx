@@ -4,7 +4,6 @@ import Sidebar from "./components/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./App.css";
-import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [data, setData] = useState({
@@ -14,22 +13,22 @@ function App() {
       objective:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus deserunt est expedita explicabo iste placeat debitis dolorem? Commodi, natus?",
       nationality: "Filipino",
-      address: "Mabalacat City",
-      mobile: "12345678910",
-      email: "abc@email.com",
+      address: "Taguig City",
+      mobile: "+63 975 456 789",
+      email: "juan@email.com",
       skills: [
-        { id: uuidv4(), skillName: "Skill1" },
-        { id: uuidv4(), skillName: "Skill2" },
+        { id: 1, skillName: "Skill1" },
+        { id: 2, skillName: "Skill2" },
       ],
       languages: [
-        { id: uuidv4(), languageName: "Language1" },
-        { id: uuidv4(), languageName: "Language2" },
+        { id: 3, languageName: "Language1" },
+        { id: 4, languageName: "Language2" },
       ],
     },
     workExperience: [
       {
-        companyName: "FILAM Software Technology",
-        startDate: "2022-02-01",
+        companyName: "Hooli Software",
+        startDate: "2016-02-01",
         endDate: "2022-05-01",
         position: "Web Developer Trainee",
         specialization: "Software Development",
@@ -42,17 +41,17 @@ function App() {
     ],
     education: [
       {
-        attainment: "Bachelor's/College Degree",
+        attainment: "Bachelor's Degree",
         schoolName: "Holy Angel University",
         course: "BS in Computer Engineering",
-        dateGraduated: "2022-06-10",
+        dateGraduated: "2015-06-10",
       },
     ],
   });
 
   return (
     <>
-      <header>Resume creator</header>
+      <header>CV Application</header>
       <div className="main">
         <Resume data={data} />
         <Sidebar data={data} setData={setData} />
