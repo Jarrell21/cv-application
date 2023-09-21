@@ -13,6 +13,24 @@ textarea {
   flex-direction: column;
 }
 
+.skill {
+  background: gray;
+}
+
+.skill:hover {
+  background: red;
+  cursor: pointer;
+}
+
+.language {
+  background: gray;
+}
+
+.language:hover {
+  background: red;
+  cursor: pointer;
+}
+
 .sidebar-item {
   border: 1px solid red;
 }
