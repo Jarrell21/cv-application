@@ -16,33 +16,14 @@ function Resume({ data }) {
           <h3>WORK EXPERIENCE</h3>
           {data.workExperience &&
             data.workExperience.map((work) => {
-              return (
-                <Work
-                  key={work}
-                  companyName={work.companyName}
-                  startDate={work.startDate}
-                  endDate={work.endDate}
-                  position={work.position}
-                  specialization={work.specialization}
-                  industry={work.industry}
-                  natureOfWork={work.natureOfWork}
-                />
-              );
+              return <Work key={work.id} workData={work} />;
             })}
         </div>
         <div className="education">
           <h3>EDUCATION</h3>
           {data.education &&
             data.education.map((educ) => {
-              return (
-                <Education
-                  key={educ}
-                  dateGraduated={educ.dateGraduated}
-                  attainment={educ.attainment}
-                  schoolName={educ.schoolName}
-                  course={educ.course}
-                />
-              );
+              return <Education key={educ.id} educData={educ} />;
             })}
         </div>
       </div>

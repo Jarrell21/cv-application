@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Education({ dateGraduated, attainment, schoolName, course }) {
+function Education({ educData }) {
   return (
     <div className="attainment">
       <div className="attainment-row">
         <div className="attainment-left-col">
-          <p>{dateGraduated}</p>
+          <p>{educData.dateGraduated}</p>
         </div>
         <div className="attainment-right-col">
-          <p>{attainment}</p>
-          <p>{schoolName}</p>
-          <p>{course}</p>
+          <p>{educData.attainment}</p>
+          <p>{educData.schoolName}</p>
+          <p>{educData.course}</p>
         </div>
       </div>
     </div>
@@ -19,10 +19,7 @@ function Education({ dateGraduated, attainment, schoolName, course }) {
 }
 
 Education.propTypes = {
-  dateGraduated: PropTypes.any,
-  attainment: PropTypes.any,
-  schoolName: PropTypes.any,
-  course: PropTypes.any,
+  educData: PropTypes.any,
 };
 
 export default Education;
