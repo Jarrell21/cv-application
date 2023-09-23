@@ -1,15 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function Work({
-  companyName,
-  startDate,
-  endDate,
-  position,
-  specialization,
-  industry,
-  natureOfWork,
-}) {
+function Work({ workData }) {
   var months = [
     "January",
     "February",
@@ -31,11 +23,11 @@ function Work({
   }
 
   return (
-    <div className="work">
+    <div className="resume-work">
       <div className="work-header">
-        <h3>{companyName}</h3>
+        <h3>{workData.companyName}</h3>
         <p>
-          ({convertDate(startDate)} - {convertDate(endDate)})
+          ({convertDate(workData.startDate)} - {convertDate(workData.endDate)})
         </p>
       </div>
       <div className="work-row">
@@ -46,12 +38,10 @@ function Work({
           <p>Nature of Work: </p>
         </div>
         <div className="work-right-col">
-          <p>{position}</p>
-          <p>{specialization}</p>
-          <p>{industry}</p>
-          {natureOfWork.map((desc) => (
-            <p key={desc}>- {desc}</p>
-          ))}
+          <p>{workData.position}</p>
+          <p>{workData.specialization}</p>
+          <p>{workData.industry}</p>
+          <p>{workData.natureOfWork}</p>
         </div>
       </div>
     </div>
@@ -59,13 +49,7 @@ function Work({
 }
 
 Work.propTypes = {
-  companyName: PropTypes.any,
-  startDate: PropTypes.any,
-  endDate: PropTypes.any,
-  position: PropTypes.any,
-  specialization: PropTypes.any,
-  industry: PropTypes.any,
-  natureOfWork: PropTypes.any,
+  workData: PropTypes.any,
 };
 
 export default Work;

@@ -1,77 +1,42 @@
-import React from "react";
-import InputGroup from "./InputGroup";
+import { useState } from "react";
 import PropTypes from "prop-types";
+import AddWork from "./AddWork";
+import EditWork from "./EditWork";
 
-function WorkInput({ data, setData, visible, handleAddButton }) {
-  const workInputList = [
-    {
-      groupName: "workExperience",
-      label: "Company name",
-      type: "text",
-      name: "companyName",
-    },
-    {
-      groupName: "workExperience",
-      label: "Start date",
-      type: "date",
-      name: "startDate",
-    },
-    {
-      groupName: "workExperience",
-      label: "End date",
-      type: "date",
-      name: "endDate",
-    },
-    {
-      groupName: "workExperience",
-      label: "Position",
-      type: "text",
-      name: "position",
-    },
-    {
-      groupName: "workExperience",
-      label: "Specialization",
-      type: "text",
-      name: "specialization",
-    },
-    {
-      groupName: "workExperience",
-      label: "Industry",
-      type: "email",
-      name: "industry",
-    },
-    {
-      groupName: "workExperience",
-      label: "Nature of work",
-      type: "text",
-      name: "natureOfWork",
-      isArray: true,
-    },
-  ];
+function WorkInput({ data, setData }) {
+  const [mode, setMode] = useState({ action: "", modeData: "" });
+
+  const addWorkExperience = () => {
+    setMode({ action: "add" });
+  };
+
+  const editWorkExperience = (work) => {
+    setMode({ action: "edit", modeData: work });
+  };
 
   return (
     <div className="side-work-exp">
       <h3>Work Experience</h3>
-      {data.workExperience &&
-        data.workExperience.map((work) => {
-          return (
-            <div key={work} className="work">
-              <span>{work.companyName}</span>
-              <button>Edit</button>
-              <button>Delete</button>
-            </div>
-          );
-        })}
-      {visible["work"] ? (
-        <>
-          <InputGroup group={workInputList} data={data} setData={setData} />
-          <button>Submit</button>
-          <button onClick={() => handleAddButton("work")}>Cancel</button>
-        </>
+      {mode.action == "add" ? (
+        <AddWork setMode={setMode} data={data} setData={setData} />
+      ) : mode.action == "edit" ? (
+        <EditWork mode={mode} setMode={setMode} data={data} setData={setData} />
       ) : (
-        <button onClick={() => handleAddButton("work")}>
-          Add work experience
-        </button>
+        <>
+          {data.workExperience &&
+            data.workExperience.map((work) => {
+              return (
+                <p
+                  key={work.id}
+                  className="work"
+                  onClick={() => editWorkExperience(work)}
+                >
+                  {work.companyName}
+                </p>
+              );
+            })}
+          <button onClick={addWorkExperience}>Add work experience</button>
+        </>
       )}
     </div>
   );
