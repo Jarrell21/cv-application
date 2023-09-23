@@ -3,15 +3,15 @@ import { v4 as uuidv4 } from "uuid";
 
 function AddWork({ setMode, data, setData }) {
   const saveNewWork = () => {
-    const workInputs = document.querySelectorAll(".work-input");
+    const allWorkInput = document.querySelectorAll(".work-input");
 
     // ADD INPUT VALIDATION
-    // workInputs.forEach((input) => {
+    // allWorkInput.forEach((input) => {
     //   if (input.value == "") return;
     // });
 
     var newWorkData = Object.fromEntries(
-      [...workInputs].map((input) => [input.name, input.value])
+      [...allWorkInput].map((input) => [input.name, input.value])
     );
     newWorkData = { ...newWorkData, id: uuidv4() };
 

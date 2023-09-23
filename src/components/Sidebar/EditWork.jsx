@@ -2,15 +2,15 @@ import PropTypes from "prop-types";
 
 function EditWork({ mode, setMode, data, setData }) {
   const saveEditedWork = (workId) => {
-    const workInputs = document.querySelectorAll(".work-input");
+    const allWorkInput = document.querySelectorAll(".work-input");
 
     // ADD INPUT VALIDATION
-    // workInputs.forEach((input) => {
+    // allWorkInput.forEach((input) => {
     //   if (input.value == "") return;
     // });
 
     var newWork = Object.fromEntries(
-      [...workInputs].map((input) => [input.name, input.value])
+      [...allWorkInput].map((input) => [input.name, input.value])
     );
     newWork = { ...newWork, id: workId };
 
