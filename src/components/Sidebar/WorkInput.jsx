@@ -45,8 +45,6 @@ function WorkInput({ data, setData }) {
 WorkInput.propTypes = {
   data: PropTypes.any,
   setData: PropTypes.any,
-  visible: PropTypes.any,
-  handleAddButton: PropTypes.any,
 };
 
 export default WorkInput;

@@ -117,7 +117,6 @@ function Languages({ data, setData }) {
             <p
               key={language.id}
               className="language"
-              data-language-id={language.id}
               onClick={() => editLanguage(language.id, language.languageName)}
             >
               {language.languageName}
