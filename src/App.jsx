@@ -56,14 +56,14 @@ function App() {
         attainment: "Bachelor's Degree",
         schoolName: "Holy Angel University",
         course: "BS in Computer Engineering",
-        dateGraduated: "2015-06-10",
+        graduationDate: "2015-06-10",
       },
       {
         id: uuidv4(),
         attainment: "High school diploma",
         schoolName: "Cambridge University",
         course: "STEM",
-        dateGraduated: "2010-04-10",
+        graduationDate: "2010-04-10",
       },
     ],
   });

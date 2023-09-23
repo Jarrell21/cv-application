@@ -6,7 +6,7 @@ function Education({ educData }) {
     <div className="attainment">
       <div className="attainment-row">
         <div className="attainment-left-col">
-          <p>{educData.dateGraduated}</p>
+          <p>{educData.graduationDate}</p>
         </div>
         <div className="attainment-right-col">
           <p>{educData.attainment}</p>
