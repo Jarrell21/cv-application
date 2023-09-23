@@ -14,9 +14,6 @@ function Skills({ data, setData }) {
   };
 
   const exitInput = () => {
-    const skillInput = document.getElementById("skill-input");
-
-    skillInput.value = "";
     setMode("");
   };
 
@@ -79,13 +76,13 @@ function Skills({ data, setData }) {
     <div className="side-skills">
       <h3>Skills</h3>
       {mode.action == "add" ? (
-        <div className="add-skill">
+        <form className="add-skill">
           <input className="input" id="skill-input" name="skill" type="text" />
           <button onClick={saveNewSkill}>Save</button>
           <button onClick={exitInput}>Cancel</button>
-        </div>
+        </form>
       ) : mode.action == "edit" ? (
-        <div className="edit-skill">
+        <form className="edit-skill">
           <input
             className="input"
             id="skill-input"
@@ -96,14 +93,13 @@ function Skills({ data, setData }) {
           <button onClick={() => saveEditedSkill(mode.skillId)}>Save</button>
           <button onClick={() => deleteSkill(mode.skillId)}>Delete</button>
           <button onClick={exitInput}>Cancel</button>
-        </div>
+        </form>
       ) : (
         <>
           {data.personalInfo.skills.map((skill) => (
             <p
               key={skill.id}
               className="skill"
-              data-skill-id={skill.id}
               onClick={() => editSkill(skill.id, skill.skillName)}
             >
               {skill.skillName}

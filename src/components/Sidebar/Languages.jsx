@@ -22,9 +22,6 @@ function Languages({ data, setData }) {
   };
 
   const exitInput = () => {
-    const languageInput = document.getElementById("language-input");
-
-    languageInput.value = "";
     setMode("");
   };
 
