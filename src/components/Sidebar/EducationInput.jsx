@@ -1,57 +1,30 @@
-import React from "react";
-import InputGroup from "./InputGroup";
+import { useState } from "react";
 import PropTypes from "prop-types";
 
-function EducationInput({ data, setData, visible, handleAddButton }) {
-  const educationInputList = [
-    {
-      groupName: "education",
-      label: "School name",
-      type: "text",
-      name: "schoolName",
-    },
-    {
-      groupName: "education",
-      label: "Attainment",
-      type: "text",
-      name: "attainment",
-    },
-    { groupName: "education", label: "Course", type: "text", name: "course" },
-    {
-      groupName: "education",
-      label: "Date graduated",
-      type: "date",
-      name: "dateGraduated",
-    },
-  ];
+function EducationInput({ data, setData }) {
+  const [mode, setMode] = useState({ action: "", modeData: "" });
 
   return (
     <div className="side-education">
       <h3>Education</h3>
-      {data.education &&
-        data.education.map((education) => {
-          return (
-            <div key={education} className="education">
-              <span>{education.schoolName}</span>
-              <button>Edit</button>
-              <button>Delete</button>
-            </div>
-          );
-        })}
-      {visible["education"] ? (
+      {mode.action == "add" ? (
         <>
-          <InputGroup
-            group={educationInputList}
-            data={data}
-            setData={setData}
-          />
           <button>Submit</button>
-          <button onClick={() => handleAddButton("education")}>Cancel</button>
+          <button>Cancel</button>
+        </>
+      ) : mode.action == "edit" ? (
+        <>
+          <button>Submit</button>
+          <button>Cancel</button>
         </>
       ) : (
-        <button onClick={() => handleAddButton("education")}>
-          Add education
-        </button>
+        <>
+          {data.education &&
+            data.education.map((education) => {
+              return <p key={education.id}>{education.schoolName}</p>;
+            })}
+          <button>Add education</button>
+        </>
       )}
     </div>
   );
