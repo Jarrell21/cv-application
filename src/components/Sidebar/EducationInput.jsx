@@ -1,29 +1,46 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import AddEducation from "./AddEducation";
+import EditEducation from "./EditEducation";
 
 function EducationInput({ data, setData }) {
   const [mode, setMode] = useState({ action: "", modeData: "" });
+
+  const addEducation = () => {
+    setMode({ action: "add" });
+  };
+
+  const editEducation = (education) => {
+    setMode({ action: "edit", modeData: education });
+  };
 
   return (
     <div className="side-education">
       <h3>Education</h3>
       {mode.action == "add" ? (
-        <>
-          <button>Submit</button>
-          <button>Cancel</button>
-        </>
+        <AddEducation setData={setData} data={data} setMode={setMode} />
       ) : mode.action == "edit" ? (
-        <>
-          <button>Submit</button>
-          <button>Cancel</button>
-        </>
+        <EditEducation
+          data={data}
+          setData={setData}
+          mode={mode}
+          setMode={setMode}
+        />
       ) : (
         <>
           {data.education &&
             data.education.map((education) => {
-              return <p key={education.id}>{education.schoolName}</p>;
+              return (
+                <p
+                  key={education.id}
+                  onClick={() => editEducation(education)}
+                  className="educ"
+                >
+                  {education.schoolName}
+                </p>
+              );
             })}
-          <button>Add education</button>
+          <button onClick={addEducation}>Add education</button>
         </>
       )}
     </div>
@@ -33,8 +50,6 @@ function EducationInput({ data, setData }) {
 EducationInput.propTypes = {
   data: PropTypes.any,
   setData: PropTypes.any,
-  visible: PropTypes.any,
-  handleAddButton: PropTypes.any,
 };
 
 export default EducationInput;
