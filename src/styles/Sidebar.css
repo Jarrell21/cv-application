@@ -15,13 +15,15 @@ textarea {
 
 .skill,
 .language,
-.work {
+.work,
+.educ {
   background: gray;
 }
 
 .skill:hover,
 .language:hover,
-.work:hover {
+.work:hover,
+.educ:hover {
   background: red;
   cursor: pointer;
 }
