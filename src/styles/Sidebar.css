@@ -13,20 +13,15 @@ textarea {
   flex-direction: column;
 }
 
-.skill {
+.skill,
+.language,
+.work {
   background: gray;
 }
 
-.skill:hover {
-  background: red;
-  cursor: pointer;
-}
-
-.language {
-  background: gray;
-}
-
-.language:hover {
+.skill:hover,
+.language:hover,
+.work:hover {
   background: red;
   cursor: pointer;
 }
