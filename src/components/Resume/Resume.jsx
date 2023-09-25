@@ -1,9 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
-import PersonalInfo from "./Resume/PersonalInfo";
-import Work from "./Resume/Work";
-import Education from "./Resume/Education";
-import "../styles/Resume.css";
+import PersonalInfo from "./PersonalInfo";
+import Work from "./Work";
+import Education from "./Education";
+import "../../styles/Resume.css";
 
 function Resume({ data }) {
   return (
@@ -32,8 +31,7 @@ function Resume({ data }) {
 }
 
 Resume.propTypes = {
-  data: PropTypes.any,
-  setData: PropTypes.any,
+  data: PropTypes.object,
 };
 
 export default Resume;

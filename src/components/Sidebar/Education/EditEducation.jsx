@@ -60,13 +60,18 @@ function EditEducation({ data, setData, mode, setMode }) {
       </div>
       <div className="input-group">
         <label htmlFor="attainment">Attainment</label>
-        <input
-          className="educ-input"
-          id="educ-input-attainment"
+        <select
           name="attainment"
-          type="text"
+          id="educ-input-attainment"
+          className="educ-input"
           defaultValue={mode.modeData.attainment}
-        />
+        >
+          <option disabled>Select attainment</option>
+          <option value="Master's Degree">Master&#39;s Degree</option>
+          <option value="Bachelor's Degree">Bachelor&#39;s Degree</option>
+          <option value="High school diploma">High school diploma</option>
+          <option value="Elementary diploma">Elementary diploma</option>
+        </select>
       </div>
       <div className="input-group">
         <label htmlFor="course">Course/Track</label>
@@ -98,10 +103,10 @@ function EditEducation({ data, setData, mode, setMode }) {
 }
 
 EditEducation.propTypes = {
-  mode: PropTypes.any,
-  setMode: PropTypes.any,
-  data: PropTypes.any,
-  setData: PropTypes.any,
+  mode: PropTypes.object,
+  setMode: PropTypes.func,
+  data: PropTypes.object,
+  setData: PropTypes.func,
 };
 
 export default EditEducation;

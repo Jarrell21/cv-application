@@ -35,12 +35,19 @@ function AddEducation({ data, setData, setMode }) {
       </div>
       <div className="input-group">
         <label htmlFor="attainment">Attainment</label>
-        <input
-          className="educ-input"
-          id="educ-input-attainment"
+        <select
           name="attainment"
-          type="text"
-        />
+          id="educ-input-attainment"
+          className="educ-input"
+        >
+          <option selected disabled>
+            Select attainment
+          </option>
+          <option value="Master's Degree">Master&#39;s Degree</option>
+          <option value="Bachelor's Degree">Bachelor&#39;s Degree</option>
+          <option value="High school diploma">High school diploma</option>
+          <option value="Elementary diploma">Elementary diploma</option>
+        </select>
       </div>
       <div className="input-group">
         <label htmlFor="course">Course/Track</label>
@@ -67,9 +74,9 @@ function AddEducation({ data, setData, setMode }) {
 }
 
 AddEducation.propTypes = {
-  data: PropTypes.any,
-  setData: PropTypes.any,
-  setMode: PropTypes.any,
+  data: PropTypes.object,
+  setData: PropTypes.func,
+  setMode: PropTypes.func,
 };
 
 export default AddEducation;

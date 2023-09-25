@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import { v4 as uuidv4 } from "uuid";
 
-function AddWork({ setMode, data, setData }) {
-  const saveNewWork = () => {
+function EditWork({ mode, setMode, data, setData }) {
+  const saveEditedWork = (workId) => {
     const allWorkInput = document.querySelectorAll(".work-input");
 
     // ADD INPUT VALIDATION
@@ -10,14 +9,35 @@ function AddWork({ setMode, data, setData }) {
     //   if (input.value == "") return;
     // });
 
-    var newWorkData = Object.fromEntries(
+    var newWork = Object.fromEntries(
       [...allWorkInput].map((input) => [input.name, input.value])
     );
-    newWorkData = { ...newWorkData, id: uuidv4() };
+    newWork = { ...newWork, id: workId };
+
+    const newWorkData = [...data.workExperience].map((work) => {
+      if (work.id == workId) {
+        work = newWork;
+      }
+
+      return work;
+    });
 
     setData({
       ...data,
-      workExperience: [...data.workExperience, newWorkData],
+      workExperience: newWorkData,
+    });
+
+    exitInput();
+  };
+
+  const deleteWork = (workId) => {
+    const newWorkData = [...data.workExperience].filter(
+      (work) => work.id != workId
+    );
+
+    setData({
+      ...data,
+      workExperience: newWorkData,
     });
 
     exitInput();
@@ -36,6 +56,7 @@ function AddWork({ setMode, data, setData }) {
           id="work-input-companyName"
           name="companyName"
           type="text"
+          defaultValue={mode.modeData.companyName}
         />
       </div>
       <div className="input-group">
@@ -45,6 +66,7 @@ function AddWork({ setMode, data, setData }) {
           id="work-input-startDate"
           name="startDate"
           type="date"
+          defaultValue={mode.modeData.startDate}
         />
       </div>
       <div className="input-group">
@@ -54,6 +76,7 @@ function AddWork({ setMode, data, setData }) {
           id="work-input-endDate"
           name="endDate"
           type="date"
+          defaultValue={mode.modeData.endDate}
         />
       </div>
       <div className="input-group">
@@ -63,6 +86,7 @@ function AddWork({ setMode, data, setData }) {
           id="work-input-position"
           name="position"
           type="text"
+          defaultValue={mode.modeData.position}
         />
       </div>
       <div className="input-group">
@@ -72,6 +96,7 @@ function AddWork({ setMode, data, setData }) {
           id="work-input-specialization"
           name="specialization"
           type="text"
+          defaultValue={mode.modeData.specialization}
         />
       </div>
       <div className="input-group">
@@ -81,6 +106,7 @@ function AddWork({ setMode, data, setData }) {
           id="work-input-industry"
           name="industry"
           type="text"
+          defaultValue={mode.modeData.industry}
         />
       </div>
       <div className="input-group">
@@ -90,18 +116,21 @@ function AddWork({ setMode, data, setData }) {
           id="work-input-natureOfWork"
           name="natureOfWork"
           rows="4"
+          defaultValue={mode.modeData.natureOfWork}
         />
       </div>
-      <button onClick={saveNewWork}>Save</button>
+      <button onClick={() => saveEditedWork(mode.modeData.id)}>Save</button>
+      <button onClick={() => deleteWork(mode.modeData.id)}>Delete</button>
       <button onClick={exitInput}>Cancel</button>
     </>
   );
 }
 
-AddWork.propTypes = {
-  setMode: PropTypes.any,
-  data: PropTypes.any,
-  setData: PropTypes.any,
+EditWork.propTypes = {
+  mode: PropTypes.object,
+  setMode: PropTypes.func,
+  data: PropTypes.object,
+  setData: PropTypes.func,
 };
 
-export default AddWork;
+export default EditWork;

@@ -93,8 +93,8 @@ function PersonalInfoInput({ data, setData }) {
 }
 
 PersonalInfoInput.propTypes = {
-  data: PropTypes.any,
-  setData: PropTypes.any,
+  data: PropTypes.object,
+  setData: PropTypes.func,
 };
 
 export default PersonalInfoInput;

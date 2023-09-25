@@ -48,8 +48,8 @@ function EducationInput({ data, setData }) {
 }
 
 EducationInput.propTypes = {
-  data: PropTypes.any,
-  setData: PropTypes.any,
+  data: PropTypes.object,
+  setData: PropTypes.func,
 };
 
 export default EducationInput;

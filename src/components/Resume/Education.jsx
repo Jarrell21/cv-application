@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 function Education({ educData }) {
@@ -19,7 +18,7 @@ function Education({ educData }) {
 }
 
 Education.propTypes = {
-  educData: PropTypes.any,
+  educData: PropTypes.object,
 };
 
 export default Education;

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Resume from "./components/Resume";
-import Sidebar from "./components/Sidebar";
+import Resume from "./components/Resume/Resume";
+import Sidebar from "./components/Sidebar/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./App.css";

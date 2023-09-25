@@ -1,12 +1,9 @@
-import React from "react";
 import PropTypes from "prop-types";
-import placeholderPerson from "../../assets/placeholder-person.jpg";
 
 function PersonalInfo({ data }) {
   return (
     <>
       <div className="img-section">
-        <img src={placeholderPerson} alt="" />
         <p className="applicant-name">
           {data.personalInfo && data.personalInfo.fullName}
         </p>
@@ -47,7 +44,7 @@ function PersonalInfo({ data }) {
 }
 
 PersonalInfo.propTypes = {
-  data: PropTypes.any,
+  data: PropTypes.object,
 };
 
 export default PersonalInfo;

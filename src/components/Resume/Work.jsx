@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 function Work({ workData }) {
@@ -49,7 +48,7 @@ function Work({ workData }) {
 }
 
 Work.propTypes = {
-  workData: PropTypes.any,
+  workData: PropTypes.object,
 };
 
 export default Work;
