@@ -15,7 +15,7 @@ function PersonalInfoInput({ data, setData }) {
 
   return (
     <div className="side-personal-info">
-      <h3>Personal Information</h3>
+      <h3 className="section-header">Personal Information</h3>
       <>
         <div className="input-group">
           <label htmlFor="fullName">Full name</label>

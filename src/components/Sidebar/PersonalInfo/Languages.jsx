@@ -82,7 +82,7 @@ function Languages({ data, setData }) {
 
   return (
     <div className="side-languages">
-      <h3>languages</h3>
+      <h3 className="section-header">Languages</h3>
       {mode.action == "add" ? (
         <div className="add-language">
           <input

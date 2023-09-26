@@ -74,15 +74,15 @@ function Skills({ data, setData }) {
 
   return (
     <div className="side-skills">
-      <h3>Skills</h3>
+      <h3 className="section-header">Skills</h3>
       {mode.action == "add" ? (
-        <form className="add-skill">
+        <div className="add-skill">
           <input className="input" id="skill-input" name="skill" type="text" />
           <button onClick={saveNewSkill}>Save</button>
           <button onClick={exitInput}>Cancel</button>
-        </form>
+        </div>
       ) : mode.action == "edit" ? (
-        <form className="edit-skill">
+        <div className="edit-skill">
           <input
             className="input"
             id="skill-input"
@@ -93,7 +93,7 @@ function Skills({ data, setData }) {
           <button onClick={() => saveEditedSkill(mode.skillId)}>Save</button>
           <button onClick={() => deleteSkill(mode.skillId)}>Delete</button>
           <button onClick={exitInput}>Cancel</button>
-        </form>
+        </div>
       ) : (
         <>
           {data.personalInfo.skills.map((skill) => (

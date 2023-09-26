@@ -2,10 +2,14 @@ textarea {
   resize: none;
 }
 
-.side {
+.sidebar {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.sidebar * .section-header {
+  background-color: var(--main-color);
 }
 
 .input-group {
@@ -17,14 +21,14 @@ textarea {
 .language,
 .work,
 .educ {
-  background: gray;
+  background: var(--resume-main-color);
 }
 
 .skill:hover,
 .language:hover,
 .work:hover,
 .educ:hover {
-  background: red;
+  background: var(--main-color-hover);
   cursor: pointer;
 }
 

@@ -16,7 +16,7 @@ function WorkInput({ data, setData }) {
 
   return (
     <div className="side-work-exp">
-      <h3>Work Experience</h3>
+      <h3 className="section-header">Work Experience</h3>
       {mode.action == "add" ? (
         <AddWork setMode={setMode} data={data} setData={setData} />
       ) : mode.action == "edit" ? (

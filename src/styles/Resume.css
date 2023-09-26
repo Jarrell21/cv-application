@@ -1,35 +1,49 @@
-.img-section > img {
-  width: 150px;
-  border: 2px solid red;
+.applicant-name {
+  font-size: 2rem;
 }
 
 .resume {
   flex: 70%;
   border: solid 1px black;
   display: flex;
-  gap: 0.5rem;
-}
-
-.resume-row {
+  max-width: 700px;
 }
 
 .resume-left-col {
   flex: 40%;
-  border: solid 1px black;
+
+  background-color: var(--resume-main-color);
+  padding: 20px;
+}
+
+.resume-left-col * .section-header {
+  background-color: white;
 }
 
 .resume-right-col {
   flex: 60%;
-  border: solid 1px black;
+  padding: 20px;
 }
 
-.attainment-row {
+.resume-right-col * .section-header {
+  background-color: var(--resume-main-color);
+}
+
+section {
+  padding: 10px;
+}
+
+.section-header {
+  padding: 0.5rem;
+}
+
+.education-row {
   display: flex;
 }
-.attainment-left-col {
+.education-left-col {
   flex: 30%;
 }
-.attainment-right-col {
+.education-right-col {
   flex: 70%;
 }
 

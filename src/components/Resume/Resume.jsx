@@ -11,20 +11,20 @@ function Resume({ data }) {
         <PersonalInfo data={data} />
       </div>
       <div className="resume-right-col">
-        <div className="work-experience">
-          <h3>WORK EXPERIENCE</h3>
+        <section className="work-experience-section">
+          <h3 className="section-header">WORK EXPERIENCE</h3>
           {data.workExperience &&
             data.workExperience.map((work) => {
               return <Work key={work.id} workData={work} />;
             })}
-        </div>
-        <div className="education">
-          <h3>EDUCATION</h3>
+        </section>
+        <section className="education-section">
+          <h3 className="section-header">EDUCATION</h3>
           {data.education &&
             data.education.map((educ) => {
               return <Education key={educ.id} educData={educ} />;
             })}
-        </div>
+        </section>
       </div>
     </main>
   );

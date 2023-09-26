@@ -8,7 +8,7 @@ import "../../styles/Sidebar.css";
 
 function Sidebar({ data, setData }) {
   return (
-    <aside className="side">
+    <aside className="sidebar">
       <PersonalInfoInput data={data} setData={setData} />
       <Skills data={data} setData={setData} />
       <Languages data={data} setData={setData} />
