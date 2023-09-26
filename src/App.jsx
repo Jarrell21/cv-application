@@ -10,7 +10,7 @@ function App() {
   const [data, setData] = useState({
     personalInfo: {
       fullName: "Juan Dela Cruz",
-      birthDate: "2000-06-21",
+      birthDate: "1999-05-23",
       objective:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloribus deserunt est expedita explicabo iste placeat debitis dolorem? Commodi, natus?",
       nationality: "Filipino",
@@ -18,12 +18,13 @@ function App() {
       mobile: "+63 975 456 789",
       email: "juan@email.com",
       skills: [
-        { id: uuidv4(), skillName: "Skill1" },
-        { id: uuidv4(), skillName: "Skill2" },
+        { id: uuidv4(), skillName: "HTML" },
+        { id: uuidv4(), skillName: "CSS" },
+        { id: uuidv4(), skillName: "JavaScript" },
       ],
       languages: [
-        { id: uuidv4(), languageName: "Language1" },
-        { id: uuidv4(), languageName: "Language2" },
+        { id: uuidv4(), languageName: "Filipino" },
+        { id: uuidv4(), languageName: "English" },
       ],
     },
     workExperience: [
@@ -54,8 +55,8 @@ function App() {
       {
         id: uuidv4(),
         attainment: "Bachelor's Degree",
-        schoolName: "Holy Angel University",
-        course: "BS in Computer Engineering",
+        schoolName: "Philippine University",
+        course: "BS in Computer Science",
         graduationDate: "2015-06-10",
       },
       {
