@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
+import { convertDate } from "../../helpers/Date";
 
 function Education({ educData }) {
   return (
-    <div className="attainment">
-      <div className="attainment-row">
-        <div className="attainment-left-col">
-          <p>{educData.graduationDate}</p>
+    <div className="education">
+      <div className="education-row">
+        <div className="education-left-col">
+          <p>{convertDate(educData.graduationDate)}</p>
         </div>
-        <div className="attainment-right-col">
+        <div className="education-right-col">
           <p>{educData.attainment}</p>
           <p>{educData.schoolName}</p>
           <p>{educData.course}</p>

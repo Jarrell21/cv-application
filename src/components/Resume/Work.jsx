@@ -1,26 +1,7 @@
 import PropTypes from "prop-types";
+import { convertDate } from "../../helpers/Date";
 
 function Work({ workData }) {
-  var months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  function convertDate(dateStr) {
-    var tempDate = dateStr.split("-");
-    return tempDate[0] + " " + months[Number(tempDate[1]) - 1];
-  }
-
   return (
     <div className="resume-work">
       <div className="work-header">
