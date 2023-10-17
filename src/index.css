@@ -12,22 +12,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --main-color: #74f0ed;
+  --main-color-hover: rgb(101, 209, 207);
+  --resume-main-color: rgb(232, 228, 228);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
@@ -38,7 +30,7 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--main-color-hover);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -48,11 +40,23 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: var(--main-color-hover);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  padding: 0.3rem;
+}
+
+header {
+  background: var(--main-color);
+  padding: 1rem;
+  font-size: 2rem;
 }
 
 @media (prefers-color-scheme: light) {
