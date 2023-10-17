@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Resume from "./components/Resume/Resume";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import "./App.css";
-import { v4 as uuidv4 } from "uuid";
+// import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [data, setData] = useState({
@@ -72,9 +73,11 @@ function App() {
   return (
     <>
       <header>CV Application</header>
-      <div className="main">
-        <Resume data={data} />
-        <Sidebar data={data} setData={setData} />
+      <div className="main container-fluid">
+        <div className="row">
+          <Resume data={data} />
+          <Sidebar data={data} setData={setData} />
+        </div>
       </div>
       <footer>
         Created by Jarrell21

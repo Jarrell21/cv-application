@@ -4,11 +4,11 @@ import WorkInput from "./Work/WorkInput";
 import EducationInput from "./Education/EducationInput";
 import Skills from "./PersonalInfo/Skills";
 import Languages from "./PersonalInfo/Languages";
-import "../../styles/Sidebar.css";
+// import "../../styles/Sidebar.css";
 
 function Sidebar({ data, setData }) {
   return (
-    <aside className="sidebar">
+    <aside className="sidebar col-lg-5 border border-danger">
       <PersonalInfoInput data={data} setData={setData} />
       <Skills data={data} setData={setData} />
       <Languages data={data} setData={setData} />
