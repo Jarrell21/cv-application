@@ -75,11 +75,44 @@ function Skills({ data, setData }) {
   return (
     <div className="side-skills">
       <h3 className="section-header">Skills</h3>
+      <div className="list-group">
+        {data.personalInfo.skills.map((skill) => (
+          <button
+            key={skill.id}
+            type="button"
+            className="list-group-item list-group-item-action mb-2 skill"
+            aria-current="true"
+            onClick={() => editSkill(skill.id, skill.skillName)}
+          >
+            {skill.skillName}
+          </button>
+        ))}
+      </div>
+
       {mode.action == "add" ? (
-        <div className="add-skill">
-          <input className="input" id="skill-input" name="skill" type="text" />
-          <button onClick={saveNewSkill}>Save</button>
-          <button onClick={exitInput}>Cancel</button>
+        <div className="input-group add-skill">
+          <input
+            id="skill-input"
+            name="skill"
+            type="text"
+            className="form-control input"
+            placeholder="Skill name"
+            aria-label="Skill name"
+          />
+          <button
+            onClick={saveNewSkill}
+            className="btn btn-outline-success"
+            type="button"
+          >
+            Save
+          </button>
+          <button
+            onClick={exitInput}
+            className="btn btn-outline-danger"
+            type="button"
+          >
+            Cancel
+          </button>
         </div>
       ) : mode.action == "edit" ? (
         <div className="edit-skill">
@@ -96,15 +129,6 @@ function Skills({ data, setData }) {
         </div>
       ) : (
         <>
-          {data.personalInfo.skills.map((skill) => (
-            <p
-              key={skill.id}
-              className="skill"
-              onClick={() => editSkill(skill.id, skill.skillName)}
-            >
-              {skill.skillName}
-            </p>
-          ))}
           <button onClick={addSkill}>Add skill</button>
         </>
       )}

@@ -23,18 +23,22 @@ function WorkInput({ data, setData }) {
         <EditWork mode={mode} setMode={setMode} data={data} setData={setData} />
       ) : (
         <>
-          {data.workExperience &&
-            data.workExperience.map((work) => {
-              return (
-                <p
-                  key={work.id}
-                  className="work"
-                  onClick={() => editWorkExperience(work)}
-                >
-                  {work.companyName}
-                </p>
-              );
-            })}
+          <div className="list-group">
+            {data.workExperience &&
+              data.workExperience.map((work) => {
+                return (
+                  <button
+                    key={work.id}
+                    type="button"
+                    className="list-group-item list-group-item-action mb-2 work"
+                    aria-current="true"
+                    onClick={() => editWorkExperience(work)}
+                  >
+                    {work.companyName}
+                  </button>
+                );
+              })}
+          </div>
           <button onClick={addWorkExperience}>Add work experience</button>
         </>
       )}

@@ -6,8 +6,8 @@ import Education from "./Education";
 
 function Resume({ data }) {
   return (
-    <main className="resume container col-lg">
-      <div className="row border border-dark">
+    <main className="resume container col-lg-7 p-4  border border-dark">
+      <div className="row">
         <div className="resume-left-col col-lg">
           <PersonalInfo data={data} />
         </div>

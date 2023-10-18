@@ -17,7 +17,7 @@ function PersonalInfoInput({ data, setData }) {
     <div className="side-personal-info">
       <h3 className="section-header">Personal Information</h3>
       <>
-        <div className="form-floating mb-3">
+        <div className="form-floating mb-2">
           <input
             name="fullName"
             type="text"
@@ -29,19 +29,19 @@ function PersonalInfoInput({ data, setData }) {
           />
           <label htmlFor="floatingInput">Full name</label>
         </div>
-        <div className="form-floating mb-3">
+        <div className="form-floating mb-2">
           <input
             name="birthDate"
             type="date"
             className="form-control personal-info-input"
             id="floatingInput"
-            placeholder="Date"
+            placeholder="Birth date"
             defaultValue={data.personalInfo.birthDate}
             onChange={handleOnChange}
           />
-          <label htmlFor="floatingInput">Date</label>
+          <label htmlFor="floatingInput">Birth date</label>
         </div>
-        <div className="form-floating mb-3">
+        <div className="form-floating mb-2">
           <input
             name="nationality"
             type="text"
@@ -53,7 +53,7 @@ function PersonalInfoInput({ data, setData }) {
           />
           <label htmlFor="floatingInput">Nationality</label>
         </div>
-        <div className="form-floating mb-3">
+        <div className="form-floating mb-2">
           <input
             name="address"
             type="text"
@@ -65,19 +65,7 @@ function PersonalInfoInput({ data, setData }) {
           />
           <label htmlFor="floatingInput">Address</label>
         </div>
-        <div className="form-floating mb-3">
-          <input
-            name="address"
-            type="text"
-            className="form-control personal-info-input"
-            id="floatingInput"
-            placeholder="Address"
-            defaultValue={data.personalInfo.address}
-            onChange={handleOnChange}
-          />
-          <label htmlFor="floatingInput">Address</label>
-        </div>
-        <div className="form-floating mb-3">
+        <div className="form-floating mb-2">
           <input
             name="mobile"
             type="text"
@@ -89,7 +77,7 @@ function PersonalInfoInput({ data, setData }) {
           />
           <label htmlFor="floatingInput">Mobile</label>
         </div>
-        <div className="form-floating mb-3">
+        <div className="form-floating mb-2">
           <input
             name="email"
             type="text"
@@ -107,10 +95,9 @@ function PersonalInfoInput({ data, setData }) {
             placeholder="Leave a comment here"
             id="floatingTextarea2"
             name="objective"
-            // rows="4"
             defaultValue={data.personalInfo.objective}
             onChange={handleOnChange}
-            style={{ height: "max-content" }}
+            style={{ height: "8rem" }}
           ></textarea>
           <label htmlFor="floatingTextarea2">Objective</label>
         </div>

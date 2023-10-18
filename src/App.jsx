@@ -73,8 +73,8 @@ function App() {
   return (
     <>
       <header>CV Application</header>
-      <div className="main container-fluid">
-        <div className="row">
+      <div className="main container-lg mt-5">
+        <div className="row column-gap-5">
           <Resume data={data} />
           <Sidebar data={data} setData={setData} />
         </div>

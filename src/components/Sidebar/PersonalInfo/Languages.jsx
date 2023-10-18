@@ -113,15 +113,19 @@ function Languages({ data, setData }) {
         </div>
       ) : (
         <>
-          {data.personalInfo.languages.map((language) => (
-            <p
-              key={language.id}
-              className="language"
-              onClick={() => editLanguage(language.id, language.languageName)}
-            >
-              {language.languageName}
-            </p>
-          ))}
+          <div className="list-group">
+            {data.personalInfo.languages.map((language) => (
+              <button
+                key={language.id}
+                type="button"
+                className="list-group-item list-group-item-action mb-2 language"
+                aria-current="true"
+                onClick={() => editLanguage(language.id, language.languageName)}
+              >
+                {language.languageName}
+              </button>
+            ))}
+          </div>
           <button onClick={addLanguage}>Add language</button>
         </>
       )}

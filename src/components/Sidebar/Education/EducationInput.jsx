@@ -28,18 +28,22 @@ function EducationInput({ data, setData }) {
         />
       ) : (
         <>
-          {data.education &&
-            data.education.map((education) => {
-              return (
-                <p
-                  key={education.id}
-                  onClick={() => editEducation(education)}
-                  className="educ"
-                >
-                  {education.schoolName}
-                </p>
-              );
-            })}
+          <div className="list-group">
+            {data.education &&
+              data.education.map((education) => {
+                return (
+                  <button
+                    key={education.id}
+                    onClick={() => editEducation(education)}
+                    type="button"
+                    className="list-group-item list-group-item-action mb-2 educ"
+                    aria-current="true"
+                  >
+                    {education.schoolName}
+                  </button>
+                );
+              })}
+          </div>
           <button onClick={addEducation}>Add education</button>
         </>
       )}

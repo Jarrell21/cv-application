@@ -8,7 +8,7 @@ import Languages from "./PersonalInfo/Languages";
 
 function Sidebar({ data, setData }) {
   return (
-    <aside className="sidebar col-lg-5 border border-danger">
+    <aside className="sidebar col-lg border border-danger p-4">
       <PersonalInfoInput data={data} setData={setData} />
       <Skills data={data} setData={setData} />
       <Languages data={data} setData={setData} />
