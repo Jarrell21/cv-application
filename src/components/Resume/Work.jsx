@@ -4,24 +4,32 @@ import { convertDate } from "../../helpers/Date";
 function Work({ workData }) {
   return (
     <div className="resume-work">
-      <div className="work-header">
-        <h3>{workData.companyName}</h3>
+      <div className="work-header text-center">
+        <h5>{workData.companyName}</h5>
         <p>
           ({convertDate(workData.startDate)} - {convertDate(workData.endDate)})
         </p>
       </div>
       <div className="work-row">
-        <div className="work-left-col">
-          <p>Position: </p>
-          <p>Specialization: </p>
-          <p>Industry: </p>
-          <p>Nature of Work: </p>
-        </div>
-        <div className="work-right-col">
-          <p>{workData.position}</p>
-          <p>{workData.specialization}</p>
-          <p>{workData.industry}</p>
-          <p>{workData.natureOfWork}</p>
+        <div className="">
+          <p className="row">
+            <span className="work-left-col col-5">Position:</span>
+            <span className="work-right-col col">{workData.position}</span>
+          </p>
+          <p className="row">
+            <span className="work-left-col col-5">Specialization:</span>
+            <span className="work-right-col col">
+              {workData.specialization}
+            </span>
+          </p>
+          <p className="row">
+            <span className="work-left-col col-5">Industry:</span>
+            <span className="work-right-col col">{workData.industry}</span>
+          </p>
+          <p className="row">
+            <span className="work-left-col col-5">Nature of Work:</span>
+            <span className="work-right-col col">{workData.natureOfWork}</span>
+          </p>
         </div>
       </div>
     </div>

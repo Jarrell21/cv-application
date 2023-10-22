@@ -1,67 +1,11 @@
-.applicant-name {
-  font-size: 2rem;
-}
-
-.resume {
-  flex: 70%;
-  border: solid 1px black;
-  display: flex;
-  max-width: 700px;
-}
-
 .resume-left-col {
-  flex: 40%;
-
   background-color: var(--resume-main-color);
-  padding: 20px;
 }
 
 .resume-left-col * .section-header {
   background-color: white;
 }
 
-.resume-right-col {
-  flex: 60%;
-  padding: 20px;
-}
-
 .resume-right-col * .section-header {
   background-color: var(--resume-main-color);
-}
-
-section {
-  padding: 10px;
-}
-
-.section-header {
-  padding: 0.5rem;
-}
-
-.education-row {
-  display: flex;
-}
-.education-left-col {
-  flex: 30%;
-}
-.education-right-col {
-  flex: 70%;
-}
-
-.work-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.work-row {
-  display: flex;
-}
-
-.work-left-col {
-  flex: 30%;
-}
-
-.work-right-col {
-  flex: 70%;
 }

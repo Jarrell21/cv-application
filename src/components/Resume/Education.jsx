@@ -3,16 +3,14 @@ import { convertDate } from "../../helpers/Date";
 
 function Education({ educData }) {
   return (
-    <div className="education">
-      <div className="education-row">
-        <div className="education-left-col">
-          <p>{convertDate(educData.graduationDate)}</p>
-        </div>
-        <div className="education-right-col">
-          <p>{educData.attainment}</p>
-          <p>{educData.schoolName}</p>
-          <p>{educData.course}</p>
-        </div>
+    <div className="education row mb-3">
+      <div className="education-left-col col-5">
+        <p>{convertDate(educData.graduationDate)}</p>
+      </div>
+      <div className="education-right-col col">
+        <p className="mb-0 fw-bold">{educData.attainment}</p>
+        <p className="mb-0">{educData.schoolName}</p>
+        <p className="mb-0">{educData.course}</p>
       </div>
     </div>
   );
