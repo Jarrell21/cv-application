@@ -15,8 +15,8 @@ function EducationInput({ data, setData }) {
   };
 
   return (
-    <div className="side-education">
-      <h3 className="section-header">Education</h3>
+    <div className="side-education border border-dark">
+      <h5 className="section-header">Education</h5>
       {mode.action == "add" ? (
         <AddEducation setData={setData} data={data} setMode={setMode} />
       ) : mode.action == "edit" ? (

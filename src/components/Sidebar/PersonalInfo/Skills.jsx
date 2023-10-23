@@ -73,8 +73,8 @@ function Skills({ data, setData }) {
   };
 
   return (
-    <div className="side-skills">
-      <h3 className="section-header">Skills</h3>
+    <div className="side-skills mb-3 border border-dark">
+      <h5 className="section-header">Skills</h5>
       <div className="list-group">
         {data.personalInfo.skills.map((skill) => (
           <button

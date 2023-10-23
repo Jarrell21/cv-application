@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { convertDateToCompleteDate } from "../../helpers/Date";
 
 function PersonalInfo({ data }) {
   return (
@@ -15,7 +16,8 @@ function PersonalInfo({ data }) {
         <p className="row mb-1">
           <span className="col-4 fw-bold">Birthdate:</span>
           <span className="col">
-            {data.personalInfo && data.personalInfo.birthDate}
+            {data.personalInfo &&
+              convertDateToCompleteDate(data.personalInfo.birthDate)}
           </span>
         </p>
         <p className="row mb-1">

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { convertDate } from "../../helpers/Date";
+import { convertDateToYearAndMonth } from "../../helpers/Date";
 
 function Work({ workData }) {
   return (
@@ -7,7 +7,8 @@ function Work({ workData }) {
       <div className="work-header text-center">
         <h5>{workData.companyName}</h5>
         <p>
-          ({convertDate(workData.startDate)} - {convertDate(workData.endDate)})
+          ({convertDateToYearAndMonth(workData.startDate)} -{" "}
+          {convertDateToYearAndMonth(workData.endDate)})
         </p>
       </div>
       <div className="work-row">

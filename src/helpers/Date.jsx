@@ -13,9 +13,14 @@ const months = [
   "December",
 ];
 
-function convertDate(dateStr) {
+function convertDateToYearAndMonth(dateStr) {
   var tempDate = dateStr.split("-");
   return tempDate[0] + " " + months[Number(tempDate[1]) - 1];
 }
 
-export { convertDate };
+function convertDateToCompleteDate(dateStr) {
+  var tempDate = dateStr.split("-");
+  return `${months[Number(tempDate[1]) - 1]} ${tempDate[2]}, ${tempDate[0]}`;
+}
+
+export { convertDateToYearAndMonth, convertDateToCompleteDate };

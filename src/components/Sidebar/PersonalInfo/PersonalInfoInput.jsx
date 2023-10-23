@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function PersonalInfoInput({ data, setData }) {
   const handleOnChange = (e) => {
     const value = e.target.value;
-
+    console.log(value);
     setData({
       ...data,
       personalInfo: {
@@ -14,8 +14,8 @@ function PersonalInfoInput({ data, setData }) {
   };
 
   return (
-    <div className="side-personal-info">
-      <h3 className="section-header">Personal Information</h3>
+    <div className="side-personal-info mb-3 border border-dark">
+      <h5 className="section-header">Personal Information</h5>
       <>
         <div className="form-floating mb-2">
           <input
