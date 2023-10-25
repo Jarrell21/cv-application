@@ -23,11 +23,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid var(--main-color-hover);
@@ -47,16 +42,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-input,
-textarea {
-  font-size: 1rem;
-  padding: 0.3rem;
-}
-
 header {
   background: var(--main-color);
-  padding: 1rem;
-  font-size: 2rem;
 }
 
 @media (prefers-color-scheme: light) {

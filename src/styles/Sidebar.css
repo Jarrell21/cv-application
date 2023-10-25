@@ -1,26 +1,9 @@
-.sidebar {
-  border: 1px solid var(--main-color);
+.accordion-button:not(.collapsed) {
+  color: black !important;
+  background: var(--main-color) !important;
 }
 
-/* .sidebar * .section-header {
-  background-color: var(--main-color);
-} */
-
-.skill,
-.language,
-.work,
-.educ {
-  background: var(--resume-main-color);
-}
-
-.skill:hover,
-.language:hover,
-.work:hover,
-.educ:hover {
-  background: var(--main-color-hover);
-  cursor: pointer;
-}
-
-.sidebar-item {
-  border: 1px solid var(--main-color);
+.accordion-button:focus {
+  border-color: none !important;
+  box-shadow: none !important;
 }

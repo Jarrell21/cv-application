@@ -4,7 +4,7 @@ import { convertDateToCompleteDate } from "../../helpers/Date";
 function PersonalInfo({ data }) {
   return (
     <>
-      <section className="applicant-name mb-3">
+      <section className="applicant-name my-3">
         <h4>{data.personalInfo && data.personalInfo.fullName}</h4>
       </section>
       <section className="objective-section mb-4">

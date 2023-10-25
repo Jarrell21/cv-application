@@ -72,14 +72,14 @@ function App() {
 
   return (
     <>
-      <header>CV Application</header>
+      <header className="p-3 fs-2">CV Application</header>
       <div className="main container-lg mt-5">
         <div className="row column-gap-5">
           <Resume data={data} />
           <Sidebar data={data} setData={setData} />
         </div>
       </div>
-      <footer>
+      <footer className="text-center m-3 mt-5 fs-5">
         Created by Jarrell21
         <a href="https://github.com/Jarrell21" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faGithub} />

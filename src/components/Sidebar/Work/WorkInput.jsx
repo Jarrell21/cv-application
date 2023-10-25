@@ -15,34 +15,86 @@ function WorkInput({ data, setData }) {
   };
 
   return (
-    <div className="side-work-exp mb-3 border border-dark">
-      <h5 className="section-header">Work Experience</h5>
-      {mode.action == "add" ? (
-        <AddWork setMode={setMode} data={data} setData={setData} />
-      ) : mode.action == "edit" ? (
-        <EditWork mode={mode} setMode={setMode} data={data} setData={setData} />
-      ) : (
-        <>
-          <div className="list-group">
-            {data.workExperience &&
-              data.workExperience.map((work) => {
-                return (
-                  <button
-                    key={work.id}
-                    type="button"
-                    className="list-group-item list-group-item-action mb-2 work"
-                    aria-current="true"
-                    onClick={() => editWorkExperience(work)}
-                  >
-                    {work.companyName}
-                  </button>
-                );
-              })}
-          </div>
-          <button onClick={addWorkExperience}>Add work experience</button>
-        </>
-      )}
-    </div>
+    <>
+      <h2 className="accordion-header">
+        <button
+          className="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFour"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFour"
+        >
+          Work Experience
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseFour"
+        className="accordion-collapse collapse"
+        data-bs-parent="#accordionPanelsStayOpenExample"
+      >
+        <div className="accordion-body">
+          {mode.action == "add" ? (
+            <AddWork setMode={setMode} data={data} setData={setData} />
+          ) : mode.action == "edit" ? (
+            <EditWork
+              mode={mode}
+              setMode={setMode}
+              data={data}
+              setData={setData}
+            />
+          ) : (
+            <>
+              <div className="list-group">
+                {data.workExperience &&
+                  data.workExperience.map((work) => {
+                    return (
+                      <button
+                        key={work.id}
+                        type="button"
+                        className="list-group-item list-group-item-action mb-2 work"
+                        aria-current="true"
+                        onClick={() => editWorkExperience(work)}
+                      >
+                        {work.companyName}
+                      </button>
+                    );
+                  })}
+              </div>
+              <button onClick={addWorkExperience}>Add work experience</button>
+            </>
+          )}
+        </div>
+      </div>
+    </>
+    // <div className="side-work-exp mb-3">
+    //   <h5 className="section-header">Work Experience</h5>
+    // {mode.action == "add" ? (
+    //   <AddWork setMode={setMode} data={data} setData={setData} />
+    // ) : mode.action == "edit" ? (
+    //   <EditWork mode={mode} setMode={setMode} data={data} setData={setData} />
+    // ) : (
+    //   <>
+    //     <div className="list-group">
+    //       {data.workExperience &&
+    //         data.workExperience.map((work) => {
+    //           return (
+    //             <button
+    //               key={work.id}
+    //               type="button"
+    //               className="list-group-item list-group-item-action mb-2 work"
+    //               aria-current="true"
+    //               onClick={() => editWorkExperience(work)}
+    //             >
+    //               {work.companyName}
+    //             </button>
+    //           );
+    //         })}
+    //     </div>
+    //     <button onClick={addWorkExperience}>Add work experience</button>
+    //   </>
+    // )}
+    // </div>
   );
 }
 
