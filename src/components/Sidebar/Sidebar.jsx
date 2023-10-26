@@ -5,6 +5,7 @@ import EducationInput from "./Education/EducationInput";
 import Skills from "./PersonalInfo/Skills";
 import Languages from "./PersonalInfo/Languages";
 import "../../styles/Sidebar.css";
+import Actions from "./Actions/Actions";
 
 function Sidebar({ data, setData }) {
   return (
@@ -26,32 +27,7 @@ function Sidebar({ data, setData }) {
           <EducationInput data={data} setData={setData} />
         </div>
         <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button fw-bold collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseSix"
-              aria-expanded="true"
-              aria-controls="panelsStayOpen-collapseSix"
-            >
-              Actions
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapseSix"
-            className="accordion-collapse collapse"
-            data-bs-parent="#accordionPanelsStayOpenExample"
-          >
-            <div className="accordion-body row gap-2">
-              <button type="button" className="btn-outline-primary">
-                Clear CV
-              </button>
-              <button type="button" className="btn-outline-primary">
-                Load sample data
-              </button>
-            </div>
-          </div>
+          <Actions setData={setData} />
         </div>
       </div>
     </aside>
