@@ -6,7 +6,7 @@ import "../../styles/Resume.css";
 
 function Resume({ data }) {
   return (
-    <main className="resume container col-lg-8 border border-dark-subtle">
+    <main className="resume container col-8 border border-dark-subtle mb-3">
       <div className="row p-2 h-100">
         <div className="resume-left-col col-sm">
           <PersonalInfo data={data} />
