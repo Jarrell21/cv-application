@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function PersonalInfoInput({ data, setData }) {
   const handleOnChange = (e) => {
     const value = e.target.value;
-    console.log(value);
+
     setData({
       ...data,
       personalInfo: {
