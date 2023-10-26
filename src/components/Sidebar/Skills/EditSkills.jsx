@@ -3,7 +3,6 @@ import isFormValid from "../../../helpers/FormValidation";
 
 function EditSkills({ data, setData, mode, exitInput }) {
   const saveEditedSkill = (event, skillId) => {
-    console.log(event.target);
     if (!isFormValid(event)) {
       return;
     }
