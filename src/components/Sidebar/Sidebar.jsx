@@ -41,6 +41,7 @@ function Sidebar({ data, setData }) {
           <div
             id="panelsStayOpen-collapseSix"
             className="accordion-collapse collapse"
+            data-bs-parent="#accordionPanelsStayOpenExample"
           >
             <div className="accordion-body row gap-2">
               <button type="button" className="btn-outline-primary">
