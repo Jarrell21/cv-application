@@ -1,7 +1,14 @@
 import PropTypes from "prop-types";
+import sampleData from "../../../sampleData";
 
 function Actions({ setData }) {
   const handleClearCv = () => {
+    const personalInfoInput = document.querySelectorAll(".personal-info-input");
+
+    personalInfoInput.forEach((input) => {
+      input.value = "";
+    });
+
     setData({
       personalInfo: {
         fullName: "",
@@ -16,6 +23,16 @@ function Actions({ setData }) {
       },
       workExperience: [],
       education: [],
+    });
+  };
+
+  const handleLoadData = () => {
+    setData(sampleData);
+
+    const personalInfoInput = document.querySelectorAll(".personal-info-input");
+
+    personalInfoInput.forEach((input) => {
+      input.value = sampleData.personalInfo[input.name];
     });
   };
 
@@ -46,7 +63,11 @@ function Actions({ setData }) {
           >
             Clear CV
           </button>
-          <button type="button" className="btn-outline-primary">
+          <button
+            type="button"
+            className="btn-outline-primary"
+            onClick={handleLoadData}
+          >
             Load sample data
           </button>
         </div>
