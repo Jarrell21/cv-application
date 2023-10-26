@@ -6,12 +6,12 @@ import "../../styles/Resume.css";
 
 function Resume({ data }) {
   return (
-    <main className="resume container col-lg-7 min-h-100 border border-dark-subtle">
+    <main className="resume container col-lg-8 border border-dark-subtle">
       <div className="row p-2 h-100">
-        <div className="resume-left-col col-lg">
+        <div className="resume-left-col col-sm">
           <PersonalInfo data={data} />
         </div>
-        <div className="resume-right-col col-lg">
+        <div className="resume-right-col col-sm">
           {data.workExperience.length > 0 && (
             <section className="work-experience-section">
               <h5 className="section-header p-1 mt-3">WORK EXPERIENCE</h5>

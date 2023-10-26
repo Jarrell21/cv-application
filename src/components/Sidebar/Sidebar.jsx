@@ -25,6 +25,33 @@ function Sidebar({ data, setData }) {
         <div className="accordion-item">
           <EducationInput data={data} setData={setData} />
         </div>
+        <div className="accordion-item">
+          <h2 className="accordion-header">
+            <button
+              className="accordion-button fw-bold collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseSix"
+              aria-expanded="true"
+              aria-controls="panelsStayOpen-collapseSix"
+            >
+              Actions
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseSix"
+            className="accordion-collapse collapse"
+          >
+            <div className="accordion-body row gap-2">
+              <button type="button" className="btn-outline-primary">
+                Clear CV
+              </button>
+              <button type="button" className="btn-outline-primary">
+                Load sample data
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </aside>
   );

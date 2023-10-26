@@ -5,7 +5,11 @@ function PersonalInfo({ data }) {
   return (
     <>
       <section className="applicant-name my-3">
-        <h4>{data.personalInfo && data.personalInfo.fullName}</h4>
+        <h4>
+          {data.personalInfo && data.personalInfo.fullName != ""
+            ? data.personalInfo.fullName
+            : "Your name here"}
+        </h4>
       </section>
       <section className="objective-section mb-4">
         <h5 className="section-header p-1">OBJECTIVE</h5>

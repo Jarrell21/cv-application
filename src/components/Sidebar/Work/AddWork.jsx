@@ -29,71 +29,95 @@ function AddWork({ setMode, data, setData }) {
 
   return (
     <>
-      <div className="input-group">
-        <label htmlFor="companyName">Company name</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
+          type="text"
+          className="work-input form-control"
           id="work-input-companyName"
+          placeholder="Company name"
           name="companyName"
-          type="text"
         />
+        <label htmlFor="work-input-companyName">Company name</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="startDate">Start date</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
+          type="date"
+          className="work-input form-control"
           id="work-input-startDate"
+          placeholder="Start date"
           name="startDate"
-          type="date"
         />
+        <label htmlFor="work-input-startDate">Start date</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="endDate">End date</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
+          type="date"
+          className="work-input form-control"
           id="work-input-endDate"
+          placeholder="End date"
           name="endDate"
-          type="date"
         />
+        <label htmlFor="work-input-endDate">End date</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="position">Position</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
+          type="text"
+          className="work-input form-control"
           id="work-input-position"
+          placeholder="Position"
           name="position"
-          type="text"
         />
+        <label htmlFor="work-input-position">Position</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="specialization">Specialization</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
+          type="text"
+          className="work-input form-control"
           id="work-input-specialization"
+          placeholder="Specialization"
           name="specialization"
-          type="text"
         />
+        <label htmlFor="work-input-specialization">Specialization</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="industry">Industry</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
-          id="work-input-industry"
-          name="industry"
           type="text"
+          className="work-input form-control"
+          id="work-input-industry"
+          placeholder="Industry"
+          name="industry"
         />
+        <label htmlFor="work-input-industry">Industry</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="natureOfWork">Nature of Work</label>
+      <div className="form-floating mb-3">
         <textarea
-          className="work-input"
+          className="work-input form-control"
+          placeholder="Nature of Work"
           id="work-input-natureOfWork"
           name="natureOfWork"
-          rows="4"
-        />
+        ></textarea>
+        <label htmlFor="work-input-natureOfWork">Nature of Work</label>
       </div>
-      <button onClick={saveNewWork}>Save</button>
-      <button onClick={exitInput}>Cancel</button>
+      <div
+        className="btn-group w-100"
+        role="group"
+        aria-label="Basic outlined example"
+      >
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          onClick={saveNewWork}
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-secondary"
+          onClick={exitInput}
+        >
+          Cancel
+        </button>
+      </div>
     </>
   );
 }

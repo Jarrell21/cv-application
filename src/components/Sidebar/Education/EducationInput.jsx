@@ -18,7 +18,7 @@ function EducationInput({ data, setData }) {
     <>
       <h2 className="accordion-header">
         <button
-          className="accordion-button collapsed"
+          className="accordion-button fw-bold collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseFive"
@@ -61,45 +61,18 @@ function EducationInput({ data, setData }) {
                     );
                   })}
               </div>
-              <button onClick={addEducation}>Add education</button>
+              <button
+                type="button"
+                className="btn btn-outline-primary"
+                onClick={addEducation}
+              >
+                Add education
+              </button>
             </>
           )}
         </div>
       </div>
     </>
-    // <div className="side-education">
-    //   <h5 className="section-header">Education</h5>
-    // {mode.action == "add" ? (
-    //   <AddEducation setData={setData} data={data} setMode={setMode} />
-    // ) : mode.action == "edit" ? (
-    //   <EditEducation
-    //     data={data}
-    //     setData={setData}
-    //     mode={mode}
-    //     setMode={setMode}
-    //   />
-    // ) : (
-    //   <>
-    //     <div className="list-group">
-    //       {data.education &&
-    //         data.education.map((education) => {
-    //           return (
-    //             <button
-    //               key={education.id}
-    //               onClick={() => editEducation(education)}
-    //               type="button"
-    //               className="list-group-item list-group-item-action mb-2 educ"
-    //               aria-current="true"
-    //             >
-    //               {education.schoolName}
-    //             </button>
-    //           );
-    //         })}
-    //     </div>
-    //     <button onClick={addEducation}>Add education</button>
-    //   </>
-    // )}
-    // </div>
   );
 }
 

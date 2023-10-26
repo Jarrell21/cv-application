@@ -48,56 +48,82 @@ function EditEducation({ data, setData, mode, setMode }) {
   };
   return (
     <>
-      <div className="input-group">
-        <label htmlFor="schoolName">School name</label>
+      <div className="form-floating mb-3">
         <input
-          className="educ-input"
+          type="email"
+          className="educ-input form-control"
           id="educ-input-schoolName"
+          placeholder="School name"
           name="schoolName"
-          type="text"
           defaultValue={mode.modeData.schoolName}
         />
+        <label htmlFor="educ-input-schoolName">School name</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="attainment">Attainment</label>
+      <div className="form-floating mb-3">
         <select
-          name="attainment"
+          className="educ-input form-select"
           id="educ-input-attainment"
-          className="educ-input"
+          aria-label="Floating label select example"
+          name="attainment"
           defaultValue={mode.modeData.attainment}
         >
-          <option disabled>Select attainment</option>
+          <option selected>Select attainment</option>
           <option value="Master's Degree">Master&#39;s Degree</option>
           <option value="Bachelor's Degree">Bachelor&#39;s Degree</option>
           <option value="High school diploma">High school diploma</option>
           <option value="Elementary diploma">Elementary diploma</option>
         </select>
+        <label htmlFor="educ-input-attainment">Attainment</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="course">Course/Track</label>
+      <div className="form-floating mb-3">
         <input
-          className="educ-input"
-          id="educ-input-course"
-          name="course"
           type="text"
+          className="educ-input form-control"
+          id="educ-input-course"
+          placeholder="Course/Track"
+          name="course"
           defaultValue={mode.modeData.course}
         />
+        <label htmlFor="educ-input-course">Course/Track</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="graduationDate">Graduation date</label>
+      <div className="form-floating mb-3">
         <input
-          className="educ-input"
-          id="educ-input-graduationDate"
-          name="graduationDate"
           type="date"
+          className="educ-input form-control"
+          id="educ-input-graduationDate"
+          placeholder="Graduation date"
+          name="graduationDate"
           defaultValue={mode.modeData.graduationDate}
         />
+        <label htmlFor="educ-input-graduationDate">Graduation date</label>
       </div>
-      <button onClick={() => saveEditedEducation(mode.modeData.id)}>
-        Save
-      </button>
-      <button onClick={() => deleteEducation(mode.modeData.id)}>Delete</button>
-      <button onClick={exitInput}>Cancel</button>
+      <div
+        className="btn-group w-100"
+        role="group"
+        aria-label="Basic outlined example"
+      >
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          onClick={() => saveEditedEducation(mode.modeData.id)}
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-danger"
+          onClick={() => deleteEducation(mode.modeData.id)}
+        >
+          Delete
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-secondary"
+          onClick={exitInput}
+        >
+          Cancel
+        </button>
+      </div>
     </>
   );
 }

@@ -71,21 +71,21 @@ function App() {
   });
 
   return (
-    <>
+    <div className="d-flex flex-column justify-content-between">
       <header className="p-3 fs-2">CV Application</header>
-      <div className="main container-lg mt-5">
-        <div className="row column-gap-5">
+      <div className="main container-lg mt-4">
+        <div className="row column-gap-4">
           <Resume data={data} />
           <Sidebar data={data} setData={setData} />
         </div>
       </div>
-      <footer className="text-center m-3 mt-5 fs-5">
+      <footer className="text-center p-3 pt-5 fs-5 bg-white">
         Created by Jarrell21
         <a href="https://github.com/Jarrell21" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faGithub} />
         </a>
       </footer>
-    </>
+    </div>
   );
 }
 

@@ -1,3 +1,6 @@
+.resume {
+  min-height: 1000px;
+}
 .resume-left-col {
   background-color: var(--resume-main-color);
 }

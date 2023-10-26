@@ -49,79 +49,109 @@ function EditWork({ mode, setMode, data, setData }) {
 
   return (
     <>
-      <div className="input-group">
-        <label htmlFor="companyName">Company name</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
-          id="work-input-companyName"
-          name="companyName"
           type="text"
+          className="work-input form-control"
+          id="work-input-companyName"
+          placeholder="Company name"
+          name="companyName"
           defaultValue={mode.modeData.companyName}
         />
+        <label htmlFor="work-input-companyName">Company name</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="startDate">Start date</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
-          id="work-input-startDate"
-          name="startDate"
           type="date"
+          className="work-input form-control"
+          id="work-input-startDate"
+          placeholder="Start date"
+          name="startDate"
           defaultValue={mode.modeData.startDate}
         />
+        <label htmlFor="work-input-startDate">Start date</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="endDate">End date</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
-          id="work-input-endDate"
-          name="endDate"
           type="date"
+          className="work-input form-control"
+          id="work-input-endDate"
+          placeholder="End date"
+          name="endDate"
           defaultValue={mode.modeData.endDate}
         />
+        <label htmlFor="work-input-endDate">End date</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="position">Position</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
-          id="work-input-position"
-          name="position"
           type="text"
+          className="work-input form-control"
+          id="work-input-position"
+          placeholder="Position"
+          name="position"
           defaultValue={mode.modeData.position}
         />
+        <label htmlFor="work-input-position">Position</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="specialization">Specialization</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
-          id="work-input-specialization"
-          name="specialization"
           type="text"
+          className="work-input form-control"
+          id="work-input-specialization"
+          placeholder="Specialization"
+          name="specialization"
           defaultValue={mode.modeData.specialization}
         />
+        <label htmlFor="work-input-specialization">Specialization</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="industry">Industry</label>
+      <div className="form-floating mb-3">
         <input
-          className="work-input"
-          id="work-input-industry"
-          name="industry"
           type="text"
+          className="work-input form-control"
+          id="work-input-industry"
+          placeholder="Industry"
+          name="industry"
           defaultValue={mode.modeData.industry}
         />
+        <label htmlFor="work-input-industry">Industry</label>
       </div>
-      <div className="input-group">
-        <label htmlFor="natureOfWork">Nature of Work</label>
+      <div className="form-floating mb-3">
         <textarea
-          className="work-input"
+          className="work-input form-control"
+          placeholder="Nature of Work"
           id="work-input-natureOfWork"
           name="natureOfWork"
-          rows="4"
           defaultValue={mode.modeData.natureOfWork}
-        />
+        ></textarea>
+        <label htmlFor="work-input-natureOfWork">Nature of Work</label>
       </div>
-      <button onClick={() => saveEditedWork(mode.modeData.id)}>Save</button>
-      <button onClick={() => deleteWork(mode.modeData.id)}>Delete</button>
-      <button onClick={exitInput}>Cancel</button>
+      <div
+        className="btn-group w-100"
+        role="group"
+        aria-label="Basic outlined example"
+      >
+        <button
+          type="button"
+          className="btn btn-outline-primary"
+          onClick={() => saveEditedWork(mode.modeData.id)}
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-danger"
+          onClick={() => deleteWork(mode.modeData.id)}
+        >
+          Delete
+        </button>
+        <button
+          type="button"
+          className="btn btn-outline-secondary"
+          onClick={exitInput}
+        >
+          Cancel
+        </button>
+      </div>
     </>
   );
 }

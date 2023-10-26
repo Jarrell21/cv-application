@@ -76,7 +76,7 @@ function Skills({ data, setData }) {
     <>
       <h2 className="accordion-header">
         <button
-          className="accordion-button collapsed"
+          className="accordion-button fw-bold collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseTwo"
@@ -92,128 +92,107 @@ function Skills({ data, setData }) {
         data-bs-parent="#accordionPanelsStayOpenExample"
       >
         <div className="accordion-body">
-          <div className="list-group">
-            {data.personalInfo.skills.map((skill) => (
-              <button
-                key={skill.id}
-                type="button"
-                className="list-group-item list-group-item-action mb-2 skill"
-                aria-current="true"
-                onClick={() => editSkill(skill.id, skill.skillName)}
-              >
-                {skill.skillName}
-              </button>
-            ))}
-          </div>
-
           {mode.action == "add" ? (
             <div className="input-group add-skill">
-              <input
-                id="skill-input"
-                name="skill"
-                type="text"
-                className="form-control input"
-                placeholder="Skill name"
-                aria-label="Skill name"
-              />
-              <button
-                onClick={saveNewSkill}
-                className="btn btn-outline-success"
-                type="button"
+              <div className="form-floating mb-3">
+                <input
+                  className="input form-control"
+                  id="skill-input"
+                  name="skill"
+                  type="text"
+                  placeholder="Skill name"
+                />
+                <label htmlFor="floatingInput">Skill name</label>
+              </div>
+              <div
+                className="btn-group w-100"
+                role="group"
+                aria-label="Basic outlined example"
               >
-                Save
-              </button>
-              <button
-                onClick={exitInput}
-                className="btn btn-outline-danger"
-                type="button"
-              >
-                Cancel
-              </button>
+                <button
+                  onClick={saveNewSkill}
+                  className="btn btn-outline-primary"
+                  type="button"
+                >
+                  Save
+                </button>
+                <button
+                  onClick={exitInput}
+                  className="btn btn-outline-secondary"
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           ) : mode.action == "edit" ? (
             <div className="edit-skill">
-              <input
-                className="input"
-                id="skill-input"
-                name="skill"
-                type="text"
-                defaultValue={mode.skillName}
-              />
-              <button onClick={() => saveEditedSkill(mode.skillId)}>
-                Save
-              </button>
-              <button onClick={() => deleteSkill(mode.skillId)}>Delete</button>
-              <button onClick={exitInput}>Cancel</button>
+              <div className="form-floating mb-3">
+                <input
+                  className="input form-control"
+                  id="skill-input"
+                  name="skill"
+                  type="text"
+                  placeholder="name@example.com"
+                  defaultValue={mode.skillName}
+                />
+                <label htmlFor="floatingInput">Skill name</label>
+              </div>
+              <div
+                className="btn-group w-100"
+                role="group"
+                aria-label="Basic outlined example"
+              >
+                <button
+                  type="button"
+                  className="btn btn-outline-primary"
+                  onClick={() => saveEditedSkill(mode.skillId)}
+                >
+                  Save
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-danger"
+                  onClick={() => deleteSkill(mode.skillId)}
+                >
+                  Delete
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary"
+                  onClick={exitInput}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           ) : (
             <>
-              <button onClick={addSkill}>Add skill</button>
+              <div className="list-group">
+                {data.personalInfo.skills.map((skill) => (
+                  <button
+                    key={skill.id}
+                    type="button"
+                    className="list-group-item list-group-item-action mb-2 skill"
+                    aria-current="true"
+                    onClick={() => editSkill(skill.id, skill.skillName)}
+                  >
+                    {skill.skillName}
+                  </button>
+                ))}
+              </div>
+              <button
+                type="button"
+                className="btn btn-outline-primary"
+                onClick={addSkill}
+              >
+                Add skill
+              </button>
             </>
           )}
         </div>
       </div>
     </>
-    // <div className="side-skills mb-3">
-    //   <h5 className="section-header">Skills</h5>
-    // <div className="list-group">
-    //   {data.personalInfo.skills.map((skill) => (
-    //     <button
-    //       key={skill.id}
-    //       type="button"
-    //       className="list-group-item list-group-item-action mb-2 skill"
-    //       aria-current="true"
-    //       onClick={() => editSkill(skill.id, skill.skillName)}
-    //     >
-    //       {skill.skillName}
-    //     </button>
-    //   ))}
-    // </div>
-
-    // {mode.action == "add" ? (
-    //   <div className="input-group add-skill">
-    //     <input
-    //       id="skill-input"
-    //       name="skill"
-    //       type="text"
-    //       className="form-control input"
-    //       placeholder="Skill name"
-    //       aria-label="Skill name"
-    //     />
-    //     <button
-    //       onClick={saveNewSkill}
-    //       className="btn btn-outline-success"
-    //       type="button"
-    //     >
-    //       Save
-    //     </button>
-    //     <button
-    //       onClick={exitInput}
-    //       className="btn btn-outline-danger"
-    //       type="button"
-    //     >
-    //       Cancel
-    //     </button>
-    //   </div>
-    // ) : mode.action == "edit" ? (
-    //   <div className="edit-skill">
-    //     <input
-    //       className="input"
-    //       id="skill-input"
-    //       name="skill"
-    //       type="text"
-    //       defaultValue={mode.skillName}
-    //     />
-    //     <button onClick={() => saveEditedSkill(mode.skillId)}>Save</button>
-    //     <button onClick={() => deleteSkill(mode.skillId)}>Delete</button>
-    //     <button onClick={exitInput}>Cancel</button>
-    //   </div>
-    // ) : (
-    //   <>
-    //     <button onClick={addSkill}>Add skill</button>
-    //   </>
-    // )}
-    // </div>
   );
 }
 
