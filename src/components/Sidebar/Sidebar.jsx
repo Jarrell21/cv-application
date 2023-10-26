@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import PersonalInfoInput from "./PersonalInfo/PersonalInfoInput";
 import WorkInput from "./Work/WorkInput";
 import EducationInput from "./Education/EducationInput";
-import Skills from "./PersonalInfo/Skills";
-import Languages from "./PersonalInfo/Languages";
+import Skills from "./Skills/Skills";
+import Languages from "./Languages/Languages";
 import "../../styles/Sidebar.css";
 import Actions from "./Actions/Actions";
 
