@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import isFormValid from "../../../helpers/FormValidation";
 
-function AddSkills({ data, setData, exitInput }) {
+function AddSkill({ data, setData, exitInput }) {
   const saveNewSkill = (event) => {
     if (!isFormValid(event)) {
       return;
@@ -63,10 +63,10 @@ function AddSkills({ data, setData, exitInput }) {
   );
 }
 
-AddSkills.propTypes = {
+AddSkill.propTypes = {
   data: PropTypes.object,
   setData: PropTypes.func,
   exitInput: PropTypes.func,
 };
 
-export default AddSkills;
+export default AddSkill;

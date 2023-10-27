@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import AddSkills from "./AddSkills";
-import EditSkills from "./EditSkills";
+import AddSkill from "./AddSkill";
+import EditSkill from "./EditSkill";
 
 function Skills({ data, setData }) {
   const [mode, setMode] = useState({ action: "", skillId: "", skillName: "" });
@@ -39,9 +39,9 @@ function Skills({ data, setData }) {
       >
         <div className="accordion-body">
           {mode.action == "add" ? (
-            <AddSkills data={data} setData={setData} exitInput={exitInput} />
+            <AddSkill data={data} setData={setData} exitInput={exitInput} />
           ) : mode.action == "edit" ? (
-            <EditSkills
+            <EditSkill
               data={data}
               setData={setData}
               mode={mode}

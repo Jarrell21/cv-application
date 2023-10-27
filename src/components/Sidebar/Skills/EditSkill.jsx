@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import isFormValid from "../../../helpers/FormValidation";
 
-function EditSkills({ data, setData, mode, exitInput }) {
+function EditSkill({ data, setData, mode, exitInput }) {
   const saveEditedSkill = (event, skillId) => {
     if (!isFormValid(event)) {
       return;
@@ -88,11 +88,11 @@ function EditSkills({ data, setData, mode, exitInput }) {
   );
 }
 
-EditSkills.propTypes = {
+EditSkill.propTypes = {
   data: PropTypes.object,
   setData: PropTypes.func,
   mode: PropTypes.object,
   exitInput: PropTypes.func,
 };
 
-export default EditSkills;
+export default EditSkill;
