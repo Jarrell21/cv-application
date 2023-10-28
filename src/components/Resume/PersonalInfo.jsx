@@ -46,23 +46,19 @@ function PersonalInfo({ data }) {
       </section>
       <section className="skills-section mb-4">
         <h5 className="section-header p-1">SKILLS</h5>
-        {data.personalInfo &&
-          data.personalInfo.skills &&
-          data.personalInfo.skills.map((skill, index) => {
-            return (
-              <p className="mb-1" key={index}>
-                {skill.skillName}
-              </p>
-            );
-          })}
+        {data.personalInfo.skills.map((skill, index) => {
+          return (
+            <p className="mb-1" key={index}>
+              {skill.skillName}
+            </p>
+          );
+        })}
       </section>
       <section className="languages-section">
         <h5 className="section-header p-1">LANGUAGES</h5>
-        {data.personalInfo &&
-          data.personalInfo.languages &&
-          data.personalInfo.languages.map((language) => {
-            return <p key={language.id}>{language.languageName}</p>;
-          })}
+        {data.personalInfo.languages.map((language, index) => {
+          return <p key={index}>{language.languageName}</p>;
+        })}
       </section>
     </>
   );

@@ -58,14 +58,14 @@ function Actions({ setData }) {
         <div className="accordion-body row gap-2">
           <button
             type="button"
-            className="btn-outline-primary"
+            className="btn btn-outline-primary"
             onClick={handleClearCv}
           >
             Clear CV
           </button>
           <button
             type="button"
-            className="btn-outline-primary"
+            className="btn btn-outline-primary"
             onClick={handleLoadData}
           >
             Load sample data

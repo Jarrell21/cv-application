@@ -15,19 +15,17 @@ function Resume({ data }) {
           {data.workExperience.length > 0 && (
             <section className="work-experience-section">
               <h5 className="section-header p-1 mt-3">WORK EXPERIENCE</h5>
-              {data.workExperience &&
-                data.workExperience.map((work) => {
-                  return <Work key={work.id} workData={work} />;
-                })}
+              {data.workExperience.map((work, index) => {
+                return <Work key={index} workData={work} />;
+              })}
             </section>
           )}
           {data.education.length > 0 && (
             <section className="education-section">
               <h5 className="section-header p-1">EDUCATION</h5>
-              {data.education &&
-                data.education.map((educ) => {
-                  return <Education key={educ.id} educData={educ} />;
-                })}
+              {data.education.map((educ, index) => {
+                return <Education key={index} educData={educ} />;
+              })}
             </section>
           )}
         </div>

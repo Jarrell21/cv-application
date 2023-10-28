@@ -4,8 +4,8 @@ import WorkInput from "./Work/WorkInput";
 import EducationInput from "./Education/EducationInput";
 import Skills from "./Skills/Skills";
 import Languages from "./Languages/Languages";
-import "../../styles/Sidebar.css";
 import Actions from "./Actions/Actions";
+import "../../styles/Sidebar.css";
 
 function Sidebar({ data, setData }) {
   return (

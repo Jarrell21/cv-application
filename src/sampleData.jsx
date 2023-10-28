@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 const sampleData = {
   personalInfo: {
     fullName: "Juan Dela Cruz",
@@ -11,18 +9,18 @@ const sampleData = {
     mobile: "+63 975 456 789",
     email: "juan@email.com",
     skills: [
-      { id: uuidv4(), skillName: "HTML" },
-      { id: uuidv4(), skillName: "CSS" },
-      { id: uuidv4(), skillName: "JavaScript" },
+      { id: 1, skillName: "HTML" },
+      { id: 2, skillName: "CSS" },
+      { id: 3, skillName: "JavaScript" },
     ],
     languages: [
-      { id: uuidv4(), languageName: "Filipino" },
-      { id: uuidv4(), languageName: "English" },
+      { id: 1, languageName: "Filipino" },
+      { id: 2, languageName: "English" },
     ],
   },
   workExperience: [
     {
-      id: uuidv4(),
+      id: 1,
       companyName: "Hooli Software",
       startDate: "2016-02-01",
       endDate: "2022-05-01",
@@ -33,7 +31,7 @@ const sampleData = {
         "On-the-job training, Collaborates with a team in developing a web application",
     },
     {
-      id: uuidv4(),
+      id: 2,
       companyName: "FILAM Software Technology",
       startDate: "2012-12-01",
       endDate: "2016-08-01",
@@ -46,14 +44,14 @@ const sampleData = {
   ],
   education: [
     {
-      id: uuidv4(),
+      id: 1,
       attainment: "Bachelor's Degree",
       schoolName: "Philippine University",
       course: "BS in Computer Science",
       graduationDate: "2015-06-10",
     },
     {
-      id: uuidv4(),
+      id: 2,
       attainment: "High school diploma",
       schoolName: "Cambridge University",
       course: "STEM",
