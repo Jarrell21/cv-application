@@ -4,9 +4,7 @@ import isFormValid from "../../../helpers/FormValidation";
 
 function AddLanguage({ data, setData, exitInput }) {
   const saveNewLanguage = (event) => {
-    if (!isFormValid(event)) {
-      return;
-    }
+    if (!isFormValid(event)) return;
 
     const languageName = document.getElementById("language-input").value;
     const languageId = uuidv4();

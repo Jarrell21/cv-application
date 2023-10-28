@@ -3,9 +3,7 @@ import isFormValid from "../../../helpers/FormValidation";
 
 function EditLanguage({ data, setData, mode, exitInput }) {
   const saveEditedLanguage = (event, languageId) => {
-    if (!isFormValid(event)) {
-      return;
-    }
+    if (!isFormValid(event)) return;
 
     const languageName = document.getElementById("language-input").value;
     const newLanguage = [...data.personalInfo.languages].map((language) => {

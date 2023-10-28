@@ -4,9 +4,7 @@ import isFormValid from "../../../helpers/FormValidation";
 
 function AddSkill({ data, setData, exitInput }) {
   const saveNewSkill = (event) => {
-    if (!isFormValid(event)) {
-      return;
-    }
+    if (!isFormValid(event)) return;
 
     const skillName = document.getElementById("skill-input").value;
     const skillId = uuidv4();

@@ -3,9 +3,7 @@ import isFormValid from "../../../helpers/FormValidation";
 
 function EditSkill({ data, setData, mode, exitInput }) {
   const saveEditedSkill = (event, skillId) => {
-    if (!isFormValid(event)) {
-      return;
-    }
+    if (!isFormValid(event)) return;
 
     const skillName = document.getElementById("skill-input").value;
     const newSkills = [...data.personalInfo.skills].map((skill) => {
