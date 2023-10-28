@@ -1,13 +1,11 @@
 import PropTypes from "prop-types";
+import isFormValid from "../../../helpers/FormValidation";
 
 function EditWork({ mode, setMode, data, setData }) {
-  const saveEditedWork = (workId) => {
-    const allWorkInput = document.querySelectorAll(".work-input");
+  const saveEditedWork = (event, workId) => {
+    if (!isFormValid(event)) return;
 
-    // ADD INPUT VALIDATION
-    // allWorkInput.forEach((input) => {
-    //   if (input.value == "") return;
-    // });
+    const allWorkInput = document.querySelectorAll(".work-input");
 
     var newWork = Object.fromEntries(
       [...allWorkInput].map((input) => [input.name, input.value])
@@ -48,7 +46,11 @@ function EditWork({ mode, setMode, data, setData }) {
   };
 
   return (
-    <>
+    <form
+      onSubmit={(event) => saveEditedWork(event, mode.modeData.id)}
+      className="edit-work needs-validation"
+      noValidate
+    >
       <div className="form-floating mb-3">
         <input
           type="text"
@@ -57,8 +59,10 @@ function EditWork({ mode, setMode, data, setData }) {
           placeholder="Company name"
           name="companyName"
           defaultValue={mode.modeData.companyName}
+          required
         />
         <label htmlFor="work-input-companyName">Company name</label>
+        <div className="invalid-feedback">Please enter Company name.</div>
       </div>
       <div className="form-floating mb-3">
         <input
@@ -68,8 +72,10 @@ function EditWork({ mode, setMode, data, setData }) {
           placeholder="Start date"
           name="startDate"
           defaultValue={mode.modeData.startDate}
+          required
         />
         <label htmlFor="work-input-startDate">Start date</label>
+        <div className="invalid-feedback">Please enter a valid date.</div>
       </div>
       <div className="form-floating mb-3">
         <input
@@ -79,8 +85,10 @@ function EditWork({ mode, setMode, data, setData }) {
           placeholder="End date"
           name="endDate"
           defaultValue={mode.modeData.endDate}
+          required
         />
         <label htmlFor="work-input-endDate">End date</label>
+        <div className="invalid-feedback">Please enter a valid date.</div>
       </div>
       <div className="form-floating mb-3">
         <input
@@ -90,8 +98,10 @@ function EditWork({ mode, setMode, data, setData }) {
           placeholder="Position"
           name="position"
           defaultValue={mode.modeData.position}
+          required
         />
         <label htmlFor="work-input-position">Position</label>
+        <div className="invalid-feedback">Please enter Position.</div>
       </div>
       <div className="form-floating mb-3">
         <input
@@ -101,8 +111,10 @@ function EditWork({ mode, setMode, data, setData }) {
           placeholder="Specialization"
           name="specialization"
           defaultValue={mode.modeData.specialization}
+          required
         />
         <label htmlFor="work-input-specialization">Specialization</label>
+        <div className="invalid-feedback">Please enter Specialization.</div>
       </div>
       <div className="form-floating mb-3">
         <input
@@ -112,8 +124,10 @@ function EditWork({ mode, setMode, data, setData }) {
           placeholder="Industry"
           name="industry"
           defaultValue={mode.modeData.industry}
+          required
         />
         <label htmlFor="work-input-industry">Industry</label>
+        <div className="invalid-feedback">Please enter Industry.</div>
       </div>
       <div className="form-floating mb-3">
         <textarea
@@ -122,19 +136,17 @@ function EditWork({ mode, setMode, data, setData }) {
           id="work-input-natureOfWork"
           name="natureOfWork"
           defaultValue={mode.modeData.natureOfWork}
+          required
         ></textarea>
         <label htmlFor="work-input-natureOfWork">Nature of Work</label>
+        <div className="invalid-feedback">Please enter Nature of Work.</div>
       </div>
       <div
         className="btn-group w-100"
         role="group"
         aria-label="Basic outlined example"
       >
-        <button
-          type="button"
-          className="btn btn-outline-primary"
-          onClick={() => saveEditedWork(mode.modeData.id)}
-        >
+        <button type="submit" className="btn btn-outline-primary">
           Save
         </button>
         <button
@@ -152,7 +164,7 @@ function EditWork({ mode, setMode, data, setData }) {
           Cancel
         </button>
       </div>
-    </>
+    </form>
   );
 }
 
